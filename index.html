@@ -3,16 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MD Engineering & Supply | Precision. Elevated. — งานวิศวกรรมและพื้นโรงงานครบวงจร</title>
-<meta name="description" content="ผู้เชี่ยวชาญ Epoxy, PU Flooring, Waterproofing, Cleanroom, Solar Rooftop และ CCTV ควบคุมงานโดยวิศวกร 100% สำรวจหน้างานฟรี ออกใบเสนอราคาใน 24 ชั่วโมง">
-<meta name="keywords" content="Epoxy Floor, PU Flooring, Waterproofing, Cleanroom, Solar Rooftop, CCTV, พื้นโรงงาน, กันซึมดาดฟ้า, ไอโซวอลล์, นนทบุรี">
-<meta name="author" content="MD Engineering & Supply Co., Ltd.">
-<meta name="theme-color" content="#086034">
+<title>MD Engineering & Supply | Precision. Elevated.</title>
+<meta name="description" content="งานวิศวกรรม พื้นโรงงาน กันซึม Solar CCTV ครบวงจร — ฟรีสำรวจหน้างาน ฟรีออกแบบ เสนอราคาภายใน 24 ชั่วโมง">
+<meta name="theme-color" content="#1D1D1F">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="MD Engineering & Supply | Precision. Elevated.">
-<meta property="og:description" content="งานวิศวกรรมและพื้นโรงงานครบวงจร ควบคุมโดยวิศวกร 100% เสนอราคาใน 24 ชม.">
-<meta property="og:url" content="https://md-eng-th.github.io/MD-Eng.co.th/">
+<meta property="og:description" content="งานวิศวกรรม พื้นโรงงาน กันซึม Solar CCTV ครบวงจร">
 <meta property="og:image" content="images/waterproofing-rooftop.jpg">
 <meta property="og:locale" content="th_TH">
 
@@ -22,6 +19,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Anuphan:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- ==== BACKEND CONFIG: ใส่ URL Apps Script Web App ของคุณตรงนี้ ==== -->
+<script>
+  window.MD_CONFIG = {
+    // ใส่ URL Apps Script ที่ deploy เป็น Web App ตรงนี้ (อ่าน SETUP.md)
+    // ถ้ายังไม่ตั้งค่า ฟอร์มจะใช้ mailto/LINE แทนได้
+    APPS_SCRIPT_URL: '',     // เช่น 'https://script.google.com/macros/s/AKfy.../exec'
+    GA_MEASUREMENT_ID: '',   // เช่น 'G-XXXXXXXXXX' (ไม่ใส่ก็ได้)
+  };
+</script>
 
 <script type="application/ld+json">
 {
@@ -33,12 +40,9 @@
   "email":"mdengineeringandsupply@gmail.com",
   "url":"https://md-eng-th.github.io/MD-Eng.co.th/",
   "logo":"https://md-eng-th.github.io/MD-Eng.co.th/images/logo.png",
-  "image":"https://md-eng-th.github.io/MD-Eng.co.th/images/waterproofing-rooftop.jpg",
   "address":{"@type":"PostalAddress","streetAddress":"133/456 ซอยสำนักงานที่ดินบางบัวทอง ต.พิมลราช","addressLocality":"บางบัวทอง","addressRegion":"นนทบุรี","postalCode":"11110","addressCountry":"TH"},
   "geo":{"@type":"GeoCoordinates","latitude":13.916556,"longitude":100.432750},
-  "sameAs":["https://www.facebook.com/mdengineerandsupply"],
-  "areaServed":"TH",
-  "priceRange":"฿฿"
+  "sameAs":["https://www.facebook.com/mdengineerandsupply"]
 }
 </script>
 
@@ -46,7 +50,7 @@
 :root{
   --bg:#FFFFFF;
   --bg-2:#F5F5F7;
-  --bg-3:#FBFBFD;
+  --bg-3:#FAFAFA;
   --ink:#1D1D1F;
   --ink-2:#424245;
   --ink-3:#6E6E73;
@@ -54,556 +58,435 @@
   --line:#D2D2D7;
   --line-soft:#E8E8ED;
   --brand:#086034;
-  --brand-2:#0E7C4C;
-  --brand-3:#34D399;
-  --brand-tint:#E8F5EE;
-  --radius-sm:12px;
-  --radius:18px;
-  --radius-lg:28px;
+  --brand-soft:#E8F5EE;
+  --orange:#E8702A;
+  --orange-2:#C8551A;
   --shadow-sm:0 1px 2px rgba(0,0,0,.04),0 1px 3px rgba(0,0,0,.06);
   --shadow:0 4px 20px rgba(0,0,0,.06),0 1px 3px rgba(0,0,0,.04);
   --shadow-lg:0 20px 50px rgba(0,0,0,.10),0 8px 16px rgba(0,0,0,.05);
-  --shadow-xl:0 30px 80px rgba(0,0,0,.12),0 12px 24px rgba(0,0,0,.06);
-  --maxw:1200px;
+  --shadow-xl:0 30px 80px rgba(0,0,0,.15),0 12px 24px rgba(0,0,0,.06);
+  --radius:18px;
+  --radius-sm:12px;
+  --maxw:1180px;
   --font-en:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif;
   --font-th:'Anuphan',-apple-system,BlinkMacSystemFont,sans-serif;
   --ease:cubic-bezier(.22,1,.36,1);
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{
-  font-family:var(--font-th);
-  background:var(--bg);
-  color:var(--ink);
-  line-height:1.6;
-  font-weight:400;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  overflow-x:hidden;
-}
+body{font-family:var(--font-th);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block;height:auto}
 a{color:inherit;text-decoration:none;transition:color .25s var(--ease)}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
-section{position:relative}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 
 /* Typography */
 .en{font-family:var(--font-en);letter-spacing:-.01em}
-h1,h2,h3,h4{line-height:1.1;letter-spacing:-.02em;font-weight:700;color:var(--ink)}
-h1{font-size:clamp(2.6rem,6.5vw,5.2rem);font-weight:800;letter-spacing:-.035em}
-h2{font-size:clamp(2rem,4.5vw,3.4rem);font-weight:800;letter-spacing:-.03em}
-h3{font-size:clamp(1.25rem,2vw,1.5rem);font-weight:700}
-.muted{color:var(--ink-3)}
+h1,h2,h3,h4{line-height:1.15;letter-spacing:-.02em;font-weight:700;color:var(--ink)}
+h1{font-size:clamp(2.4rem,5.5vw,4.4rem);font-weight:800;letter-spacing:-.035em}
+h2{font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:800;letter-spacing:-.025em}
+h3{font-size:1.15rem;font-weight:700}
+
 .tag{
   display:inline-flex;align-items:center;gap:8px;
-  padding:7px 14px;border-radius:50px;
-  background:var(--brand-tint);color:var(--brand);
-  font-family:var(--font-en);font-weight:600;font-size:.78rem;
-  letter-spacing:.06em;text-transform:uppercase;
+  padding:6px 14px;border-radius:50px;
+  background:var(--bg-2);color:var(--ink-2);
+  font-family:var(--font-en);font-weight:600;font-size:.74rem;
+  letter-spacing:.08em;text-transform:uppercase;
 }
-.tag .dot{width:6px;height:6px;border-radius:50%;background:var(--brand-2);animation:pulse 2.4s infinite}
+.tag .dot{width:5px;height:5px;border-radius:50%;background:var(--ink-3);animation:pulse 2.4s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
 
-/* Buttons - Apple style */
+/* Buttons */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  padding:14px 26px;border-radius:50px;
-  font-weight:600;font-size:.95rem;font-family:var(--font-th);
+  padding:13px 24px;border-radius:50px;
+  font-weight:600;font-size:.95rem;
   transition:all .3s var(--ease);
   white-space:nowrap;cursor:pointer;border:none;
 }
-.btn-primary{background:var(--brand);color:#fff}
-.btn-primary:hover{background:var(--brand-2);transform:translateY(-1px);box-shadow:0 10px 24px rgba(8,96,52,.25)}
-.btn-secondary{background:var(--ink);color:#fff}
-.btn-secondary:hover{background:var(--ink-2);transform:translateY(-1px)}
-.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--ink);}
-.btn-outline:hover{background:var(--ink);color:#fff}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#000;transform:translateY(-1px);box-shadow:0 10px 24px rgba(0,0,0,.18)}
+.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn-outline:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 .btn-ghost{background:var(--bg-2);color:var(--ink)}
 .btn-ghost:hover{background:var(--line-soft)}
 .btn-line{background:#06C755;color:#fff}
-.btn-line:hover{background:#05A847;transform:translateY(-1px);box-shadow:0 10px 24px rgba(6,199,85,.3)}
+.btn-line:hover{background:#05A847;transform:translateY(-1px)}
 .btn svg{width:18px;height:18px;flex-shrink:0}
-.btn-lg{padding:16px 32px;font-size:1rem}
+.btn-lg{padding:15px 30px;font-size:1rem}
+
+/* ===== Blueprint background pattern (architectural lines) ===== */
+.blueprint-bg{
+  position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0;
+  opacity:.5;
+}
+.blueprint-bg svg{position:absolute;width:100%;height:100%}
 
 /* ===== NAV ===== */
 .nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
-  background:rgba(255,255,255,.72);
+  background:rgba(255,255,255,.78);
   backdrop-filter:saturate(180%) blur(20px);
   -webkit-backdrop-filter:saturate(180%) blur(20px);
   border-bottom:1px solid transparent;
-  transition:all .4s var(--ease);
+  transition:all .35s var(--ease);
 }
-.nav.scrolled{border-bottom-color:var(--line-soft);background:rgba(255,255,255,.92)}
+.nav.scrolled{border-bottom-color:var(--line-soft);background:rgba(255,255,255,.95)}
 .nav-inner{
-  max-width:var(--maxw);margin:0 auto;padding:14px 28px;
-  display:flex;align-items:center;justify-content:space-between;
+  max-width:var(--maxw);margin:0 auto;padding:12px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
 }
-.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
-.brand img{height:36px;width:auto}
-.brand-text{display:flex;flex-direction:column;line-height:1.1}
-.brand-text b{font-family:var(--font-en);font-weight:700;font-size:1rem;color:var(--ink);letter-spacing:-.01em}
-.brand-text small{color:var(--ink-3);font-size:.68rem;letter-spacing:.04em}
-.menu{display:flex;align-items:center;gap:6px}
-.menu a:not(.btn){
-  padding:8px 16px;border-radius:50px;
-  font-size:.92rem;font-weight:500;color:var(--ink-2);
-  transition:all .25s var(--ease);
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{height:46px;width:auto}
+.brand-text{display:flex;flex-direction:column;line-height:1.05}
+.brand-text b{font-family:var(--font-en);font-weight:700;font-size:1.05rem;color:var(--ink);letter-spacing:-.01em}
+.brand-text small{color:var(--ink-3);font-size:.7rem;letter-spacing:.04em}
+
+.nav-actions{display:flex;align-items:center;gap:8px}
+.nav-icon{
+  width:42px;height:42px;border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--bg-2);transition:all .25s var(--ease);
 }
-.menu a:not(.btn):hover{color:var(--ink);background:var(--bg-2)}
-.menu .btn{margin-left:8px;font-size:.92rem;padding:10px 20px}
-.hamburger{display:none;width:40px;height:40px;border-radius:10px;padding:10px;flex-direction:column;justify-content:space-between;background:none}
-.hamburger span{display:block;height:1.8px;background:var(--ink);border-radius:2px;transition:.3s var(--ease)}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hamburger.open span:nth-child(2){opacity:0}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-icon:hover{transform:translateY(-1px);background:var(--ink);color:#fff}
+.nav-icon.call:hover{background:var(--ink)}
+.nav-icon.line:hover{background:#06C755;color:#fff}
+.nav-icon svg{width:18px;height:18px}
+.nav-quote{margin-left:6px}
+
+@media(max-width:640px){
+  .brand-text small{display:none}
+  .nav-quote{display:none}
+}
 
 /* ===== HERO ===== */
-.hero{padding:140px 0 80px;position:relative;overflow:hidden}
-.hero-inner{text-align:center;max-width:920px;margin:0 auto}
-.hero .tag{margin-bottom:32px;animation:fadeUp .8s var(--ease) backwards}
-.hero h1{margin-bottom:24px}
-.hero h1 .precision{
-  display:block;font-family:var(--font-en);font-weight:800;font-size:clamp(3rem,8.5vw,7rem);
-  letter-spacing:-.04em;line-height:.95;
-  background:linear-gradient(180deg,var(--ink) 0%,var(--brand) 100%);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  animation:fadeUp .9s var(--ease) .1s backwards;
+.hero{
+  padding:120px 0 80px;
+  position:relative;
+  background:linear-gradient(180deg,#fff 0%,var(--bg-2) 100%);
+  overflow:hidden;
 }
-.hero h1 .elevated{
-  display:block;font-family:var(--font-en);font-weight:300;font-size:clamp(2.4rem,7vw,5.6rem);
-  font-style:italic;letter-spacing:-.03em;color:var(--ink-3);
-  margin-top:-4px;
-  animation:fadeUp .9s var(--ease) .25s backwards;
+.hero-grid{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;
+  position:relative;z-index:2;
 }
-.hero .sub-th{
-  font-size:clamp(1rem,2.2vw,1.35rem);color:var(--ink-2);
-  margin:28px auto 40px;max-width:680px;font-weight:400;
-  animation:fadeUp .9s var(--ease) .4s backwards;
-}
-.hero .sub-th b{color:var(--ink);font-weight:600}
-.hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;animation:fadeUp .9s var(--ease) .55s backwards}
+.hero-text .tag{margin-bottom:24px;animation:fadeUp .8s var(--ease) backwards}
+.hero-text h1{margin-bottom:22px;animation:fadeUp .9s var(--ease) .1s backwards}
+.hero-text h1 .precision{display:block;color:var(--ink);font-family:var(--font-en);font-weight:800;letter-spacing:-.04em;line-height:.95;font-size:clamp(2.8rem,6.5vw,5rem)}
+.hero-text h1 .elevated{display:block;color:var(--ink-3);font-family:var(--font-en);font-weight:300;font-size:clamp(2.2rem,5.5vw,4.4rem);letter-spacing:-.03em;margin-top:-4px;font-style:italic}
+.hero-text .lead{font-size:clamp(1rem,1.5vw,1.15rem);color:var(--ink-2);margin-bottom:14px;animation:fadeUp .9s var(--ease) .25s backwards}
+.hero-text .lead b{color:var(--ink);font-weight:600}
+.hero-text .free{color:var(--ink-3);font-size:.95rem;margin-bottom:32px;animation:fadeUp .9s var(--ease) .35s backwards}
+.hero-text .free span{color:var(--ink);font-weight:600}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap;animation:fadeUp .9s var(--ease) .45s backwards}
+
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 
-.hero-trust{
-  margin-top:60px;padding:18px 28px;
-  display:inline-flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:center;
-  background:var(--bg-2);border-radius:50px;
-  animation:fadeUp 1s var(--ease) .7s backwards;
+/* ===== iPhone 17 Pro Cosmic Orange ===== */
+.iphone-wrap{
+  display:flex;justify-content:center;align-items:center;
+  position:relative;animation:fadeUp 1s var(--ease) .5s backwards;
 }
-.hero-trust .t-item{display:flex;align-items:center;gap:8px;font-size:.88rem;color:var(--ink-2)}
-.hero-trust .t-item svg{width:16px;height:16px;color:var(--brand)}
-.hero-trust .t-sep{width:1px;height:14px;background:var(--line)}
-
-/* ===== HERO SHOWCASE - big image carousel ===== */
-.showcase{padding:0 0 100px;position:relative}
-.showcase-frame{
-  max-width:1400px;margin:0 auto;padding:0 28px;
+.iphone{
+  width:280px;height:580px;
+  background:linear-gradient(135deg,#F08A3D 0%,var(--orange) 35%,#C8551A 100%);
+  border-radius:48px;
+  padding:14px;
   position:relative;
+  box-shadow:
+    0 0 0 2px rgba(0,0,0,.06),
+    0 30px 60px -15px rgba(232,112,42,.4),
+    0 20px 40px -10px rgba(0,0,0,.25),
+    inset 0 2px 4px rgba(255,255,255,.25),
+    inset 0 -2px 4px rgba(0,0,0,.15);
+  transform:perspective(900px) rotateY(-6deg) rotateX(2deg);
+  transition:transform .5s var(--ease);
 }
-.showcase-stage{
-  position:relative;border-radius:var(--radius-lg);overflow:hidden;
-  aspect-ratio:16/9;background:var(--bg-2);
-  box-shadow:var(--shadow-xl);
+.iphone:hover{transform:perspective(900px) rotateY(0deg) rotateX(0deg)}
+
+/* side buttons */
+.iphone::before{
+  content:'';position:absolute;left:-2px;top:120px;width:3px;height:56px;
+  background:linear-gradient(90deg,#A0440E,#C8551A);border-radius:2px;
 }
-.showcase-slide{
-  position:absolute;inset:0;opacity:0;transition:opacity 1s var(--ease);
+.iphone::after{
+  content:'';position:absolute;right:-2px;top:140px;width:3px;height:80px;
+  background:linear-gradient(270deg,#A0440E,#C8551A);border-radius:2px;
+  box-shadow:0 100px 0 #A0440E,0 200px 0 #A0440E;
 }
-.showcase-slide.active{opacity:1}
-.showcase-slide img{width:100%;height:100%;object-fit:cover}
-.showcase-slide .label{
-  position:absolute;bottom:32px;left:32px;z-index:2;
-  display:flex;align-items:center;gap:12px;
-  padding:10px 20px;border-radius:50px;
-  background:rgba(255,255,255,.95);backdrop-filter:blur(10px);
-  font-weight:600;font-size:.95rem;
+.screen{
+  width:100%;height:100%;background:#000;border-radius:36px;
+  position:relative;overflow:hidden;
 }
-.showcase-slide .label::before{
-  content:'';width:8px;height:8px;border-radius:50%;background:var(--brand-2);
+.notch{
+  position:absolute;top:10px;left:50%;transform:translateX(-50%);
+  width:96px;height:30px;background:#000;border-radius:20px;z-index:5;
+  display:flex;align-items:center;justify-content:flex-end;padding-right:8px;
 }
-.showcase-dots{
-  display:flex;justify-content:center;gap:8px;margin-top:24px;
+.notch::after{
+  content:'';width:8px;height:8px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,#1a1a1a,#000);
 }
-.showcase-dots button{
-  width:32px;height:4px;border-radius:4px;background:var(--line);
-  transition:all .3s var(--ease);
+.status-bar{
+  position:absolute;top:0;left:0;right:0;height:50px;z-index:4;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 28px 0;color:#fff;font-family:var(--font-en);
+  font-size:.78rem;font-weight:600;
 }
-.showcase-dots button.active{background:var(--brand);width:48px}
-.showcase-arrow{
-  position:absolute;top:50%;transform:translateY(-50%);z-index:3;
-  width:48px;height:48px;border-radius:50%;
-  background:rgba(255,255,255,.9);backdrop-filter:blur(10px);
-  display:grid;place-items:center;cursor:pointer;
-  box-shadow:var(--shadow);transition:all .3s var(--ease);opacity:0;
+.status-bar .icons{display:flex;align-items:center;gap:5px;font-size:.65rem}
+
+.slides{position:absolute;inset:0;border-radius:36px;overflow:hidden}
+.slide{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;padding:80px 22px 36px;text-align:center;
+  opacity:0;transform:translateY(20px);
+  transition:opacity .6s var(--ease),transform .6s var(--ease);
+  background:linear-gradient(170deg,#fff 0%,#F5F5F7 100%);
 }
-.showcase-stage:hover .showcase-arrow{opacity:1}
-.showcase-arrow:hover{background:#fff;transform:translateY(-50%) scale(1.05)}
-.showcase-arrow.prev{left:20px}
-.showcase-arrow.next{right:20px}
-.showcase-arrow svg{width:22px;height:22px}
+.slide.active{opacity:1;transform:translateY(0);z-index:2}
+.slide .big-ic{
+  width:96px;height:96px;border-radius:32px;
+  display:grid;place-items:center;margin-bottom:18px;
+  box-shadow:0 12px 28px rgba(0,0,0,.12);
+}
+.slide .big-ic svg{width:46px;height:46px;color:#fff}
+.slide .big-ic.call{background:linear-gradient(135deg,#34C759,#0D8E33)}
+.slide .big-ic.line{background:linear-gradient(135deg,#06C755,#04953F)}
+.slide .big-ic.mail{background:linear-gradient(135deg,#5E5CE6,#3634A3)}
+.slide .big-ic.brand{background:#fff;border:2px solid var(--brand);padding:8px}
+.slide .big-ic.brand img{width:100%;height:auto}
+.slide h4{font-size:.85rem;font-weight:600;color:var(--ink-3);margin-bottom:6px;font-family:var(--font-en);letter-spacing:.06em;text-transform:uppercase}
+.slide .val{font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:4px;word-break:break-all;font-family:var(--font-en);letter-spacing:-.01em}
+.slide .val-th{font-size:.95rem;color:var(--ink-2);margin-bottom:18px}
+.slide .tap-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:11px 22px;border-radius:50px;
+  font-size:.85rem;font-weight:600;color:#fff;
+  margin-top:6px;
+}
+.slide .tap-btn.green{background:#34C759}
+.slide .tap-btn.line-c{background:#06C755}
+.slide .tap-btn.mail-c{background:#5E5CE6}
+.slide .tap-btn.brand-c{background:var(--brand)}
+
+.dots{
+  position:absolute;bottom:14px;left:50%;transform:translateX(-50%);
+  display:flex;gap:6px;z-index:6;
+}
+.dots span{
+  width:6px;height:6px;border-radius:50%;background:rgba(0,0,0,.2);
+  cursor:pointer;transition:all .25s var(--ease);
+}
+.dots span.active{background:var(--ink);width:18px;border-radius:3px}
 
 /* ===== SECTIONS ===== */
-.sec{padding:120px 0}
+.sec{padding:90px 0;position:relative}
 .sec-soft{background:var(--bg-2)}
-.sec-head{text-align:center;max-width:720px;margin:0 auto 70px}
-.sec-head .tag{margin-bottom:20px}
-.sec-head p{color:var(--ink-3);font-size:1.08rem;margin-top:16px;line-height:1.6}
-
-/* ===== BRAND STATEMENT ===== */
-.statement{
-  padding:140px 0;text-align:center;position:relative;
-  background:linear-gradient(180deg,#fff 0%,var(--bg-2) 100%);
-}
-.statement h2{
-  font-weight:500;
-  font-size:clamp(1.7rem,3.6vw,2.6rem);letter-spacing:-.02em;line-height:1.45;
-  max-width:920px;margin:0 auto;color:var(--ink-2);
-}
-.statement h2 em{color:var(--brand);font-style:normal;font-weight:700}
-.statement .sig{margin-top:40px;font-size:.82rem;color:var(--ink-4);letter-spacing:.18em;text-transform:uppercase;font-family:var(--font-en);font-weight:600}
-
-/* ===== STATS ===== */
-.stats{
-  background:#fff;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);
-  padding:70px 0;
-}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;text-align:center}
-.stat .n{
-  font-family:var(--font-en);font-weight:800;
-  font-size:clamp(2.6rem,5.5vw,4rem);letter-spacing:-.04em;
-  background:linear-gradient(135deg,var(--brand),var(--brand-2));
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  line-height:1;
-}
-.stat .l{color:var(--ink-3);font-size:.95rem;margin-top:10px;font-weight:500}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 50px}
+.sec-head .tag{margin-bottom:14px}
+.sec-head h2{margin-bottom:10px}
+.sec-head p{color:var(--ink-3);font-size:1rem}
 
 /* ===== SERVICES ===== */
-.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .svc{
   background:#fff;border:1px solid var(--line-soft);border-radius:var(--radius);
-  padding:32px 28px;transition:all .4s var(--ease);
-  position:relative;overflow:hidden;cursor:default;
+  padding:24px 22px;transition:all .35s var(--ease);
+  position:relative;
 }
-.svc::after{
-  content:'';position:absolute;left:0;top:0;height:3px;width:0;
-  background:var(--brand);transition:width .5s var(--ease);
-}
-.svc:hover{transform:translateY(-4px);border-color:var(--brand-3);box-shadow:var(--shadow-lg)}
-.svc:hover::after{width:100%}
+.svc:hover{transform:translateY(-3px);border-color:var(--ink-4);box-shadow:var(--shadow)}
 .svc .ic{
-  width:52px;height:52px;border-radius:14px;
-  background:var(--brand-tint);display:grid;place-items:center;margin-bottom:22px;
-  transition:all .4s var(--ease);
+  width:42px;height:42px;border-radius:11px;
+  background:var(--bg-2);display:grid;place-items:center;margin-bottom:16px;
 }
-.svc:hover .ic{background:var(--brand);transform:rotate(-4deg)}
-.svc .ic svg{width:26px;height:26px;color:var(--brand);transition:color .4s var(--ease)}
+.svc:hover .ic{background:var(--ink)}
+.svc .ic svg{width:20px;height:20px;color:var(--ink);transition:color .3s var(--ease)}
 .svc:hover .ic svg{color:#fff}
-.svc h3{font-size:1.15rem;margin-bottom:8px}
-.svc p{color:var(--ink-3);font-size:.92rem;line-height:1.55}
-.svc .more{display:inline-flex;align-items:center;gap:4px;margin-top:14px;color:var(--brand);font-weight:600;font-size:.85rem;opacity:0;transition:opacity .3s var(--ease)}
-.svc:hover .more{opacity:1}
+.svc h3{font-size:1.02rem;margin-bottom:6px}
+.svc p{color:var(--ink-3);font-size:.85rem;line-height:1.55}
 
-/* ===== WORK GALLERY (masonry) ===== */
-.gallery{columns:3;column-gap:16px}
-.gitem{
-  break-inside:avoid;margin-bottom:16px;
-  border-radius:var(--radius);overflow:hidden;
-  position:relative;cursor:pointer;
-  background:var(--bg-2);
-  box-shadow:var(--shadow-sm);
-  transition:all .5s var(--ease);
+/* ===== WORKS SLIDESHOW (FB-feed style) ===== */
+.works-wrap{max-width:720px;margin:0 auto}
+.works-stage{
+  position:relative;border-radius:var(--radius);overflow:hidden;
+  aspect-ratio:4/5;background:var(--bg-2);
+  box-shadow:var(--shadow-lg);
 }
-.gitem:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
-.gitem img{width:100%;transition:transform .8s var(--ease)}
-.gitem:hover img{transform:scale(1.05)}
-.gitem .ov{
-  position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.7));
-  display:flex;flex-direction:column;justify-content:flex-end;padding:22px;
-  opacity:0;transition:opacity .4s var(--ease);
+.works-slide{position:absolute;inset:0;opacity:0;transition:opacity 1s var(--ease)}
+.works-slide.active{opacity:1}
+.works-slide img{width:100%;height:100%;object-fit:cover}
+.works-slide .label{
+  position:absolute;bottom:18px;left:18px;
+  display:flex;align-items:center;gap:10px;
+  padding:8px 16px;border-radius:50px;
+  background:rgba(255,255,255,.95);backdrop-filter:blur(8px);
+  font-weight:600;font-size:.85rem;
 }
-.gitem:hover .ov{opacity:1}
-.gitem .ov .cat{color:var(--brand-3);font-family:var(--font-en);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-.gitem .ov .t{color:#fff;font-weight:700;font-size:1.1rem;margin-top:4px}
+.works-slide .label::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--ink)}
+.works-dots{display:flex;justify-content:center;gap:7px;margin-top:18px}
+.works-dots button{
+  width:28px;height:3px;border-radius:3px;background:var(--line);
+  transition:all .3s var(--ease);
+}
+.works-dots button.active{background:var(--ink);width:42px}
 
-/* ===== FLOOR STRUCTURE FEATURE ===== */
-.feature-img{
-  max-width:1100px;margin:0 auto;padding:0 28px;
+@media(min-width:768px){
+  .works-stage{aspect-ratio:16/9}
+  .works-wrap{max-width:980px}
 }
-.feature-img-frame{
-  border-radius:var(--radius-lg);overflow:hidden;background:#fff;
-  box-shadow:var(--shadow-lg);border:1px solid var(--line-soft);
-}
-.feature-img-frame img{width:100%;display:block}
 
-/* ===== PROCESS ===== */
-.process{
-  display:grid;grid-template-columns:repeat(7,1fr);gap:0;position:relative;
-  max-width:1100px;margin:0 auto;
+/* ===== FLOOR STRUCTURE ===== */
+.floor-wrap{max-width:920px;margin:0 auto;padding:0 24px}
+.floor-frame{
+  border-radius:var(--radius);overflow:hidden;background:#fff;
+  box-shadow:var(--shadow);border:1px solid var(--line-soft);
 }
-.process::before{
-  content:'';position:absolute;top:32px;left:7%;right:7%;height:2px;
-  background:repeating-linear-gradient(90deg,var(--brand) 0 6px,transparent 6px 12px);
-  opacity:.3;
-}
-.p-step{text-align:center;position:relative;padding:0 8px;z-index:2}
-.p-step .n{
-  width:64px;height:64px;border-radius:50%;margin:0 auto 16px;
-  background:#fff;border:2px solid var(--brand);
-  display:grid;place-items:center;
-  font-family:var(--font-en);font-weight:700;font-size:1.3rem;color:var(--brand);
-  transition:all .4s var(--ease);box-shadow:var(--shadow-sm);
-}
-.p-step:hover .n{background:var(--brand);color:#fff;transform:scale(1.1);box-shadow:0 10px 24px rgba(8,96,52,.3)}
-.p-step h4{font-size:.95rem;margin-bottom:4px;font-weight:700}
-.p-step p{color:var(--ink-3);font-size:.78rem;line-height:1.4}
+.floor-frame img{width:100%;display:block}
 
 /* ===== QUOTE FORM ===== */
-.quote{background:var(--bg-2);padding:120px 0}
+.quote{padding:90px 0;background:var(--bg-2);position:relative;overflow:hidden}
 .quote-card{
-  max-width:1100px;margin:0 auto;background:#fff;
-  border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-xl);
-  display:grid;grid-template-columns:380px 1fr;
+  max-width:920px;margin:0 auto;background:#fff;
+  border-radius:24px;overflow:hidden;box-shadow:var(--shadow-xl);
+  padding:48px 44px;position:relative;
 }
-.quote-side{
-  background:linear-gradient(155deg,#0A4A2A 0%,var(--brand) 50%,var(--brand-2) 100%);
-  color:#fff;padding:48px 40px;position:relative;overflow:hidden;
-}
-.quote-side::before{
-  content:'';position:absolute;top:-50%;right:-50%;width:300px;height:300px;
-  border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.12),transparent 70%);
-}
-.quote-side .tag{background:rgba(255,255,255,.15);color:#fff;backdrop-filter:blur(10px)}
-.quote-side h2{color:#fff;font-size:2.2rem;margin:24px 0 16px;position:relative;z-index:2}
-.quote-side p{color:rgba(255,255,255,.85);font-size:1rem;line-height:1.65;position:relative;z-index:2;margin-bottom:30px}
-.quote-side .feat{position:relative;z-index:2}
-.quote-side .feat .f{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;font-size:.92rem}
-.quote-side .feat .f svg{width:20px;height:20px;flex-shrink:0;margin-top:1px;color:var(--brand-3)}
-.quote-side .contact-quick{
-  position:relative;z-index:2;margin-top:30px;padding-top:26px;
-  border-top:1px solid rgba(255,255,255,.15);
-}
-.quote-side .contact-quick a{display:flex;align-items:center;gap:10px;color:#fff;margin-bottom:10px;font-size:.92rem}
-.quote-side .contact-quick svg{width:16px;height:16px;opacity:.7}
-
-.quote-form{padding:48px 44px}
-.qf-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+.qf-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
 .qf-field{position:relative}
-.qf-field label{display:block;font-size:.82rem;color:var(--ink-3);font-weight:500;margin-bottom:8px}
-.qf-field label .req{color:#dc2626}
-.qf-field input,.qf-field textarea,.qf-field select{
+.qf-field label{display:block;font-size:.82rem;color:var(--ink-3);font-weight:500;margin-bottom:7px}
+.qf-field label .req{color:#dc2626;font-weight:700}
+.qf-field input,.qf-field textarea{
   width:100%;padding:13px 16px;
   border:1.5px solid var(--line);border-radius:var(--radius-sm);
   font-family:var(--font-th);font-size:.95rem;color:var(--ink);
   background:#fff;transition:all .25s var(--ease);
 }
-.qf-field input:focus,.qf-field textarea:focus,.qf-field select:focus{
-  outline:none;border-color:var(--brand);box-shadow:0 0 0 4px rgba(8,96,52,.08);
-}
-.qf-field textarea{resize:vertical;min-height:90px;line-height:1.5}
+.qf-field input::placeholder,.qf-field textarea::placeholder{color:var(--ink-4);font-weight:400}
+.qf-field input:focus,.qf-field textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 4px rgba(0,0,0,.06)}
+.qf-field textarea{resize:vertical;min-height:88px;line-height:1.5}
 .qf-field input.error{border-color:#dc2626;background:#fef2f2}
 .qf-err{color:#dc2626;font-size:.78rem;margin-top:5px;display:none}
 .qf-err.show{display:block}
 
-.qf-services{margin:6px 0 20px}
-.qf-services label.main-label{font-size:.82rem;color:var(--ink-3);font-weight:500;margin-bottom:10px;display:block}
-.svc-chips{display:flex;flex-wrap:wrap;gap:8px}
+.qf-services{margin:6px 0 18px}
+.qf-services .qlabel{font-size:.82rem;color:var(--ink-3);font-weight:500;margin-bottom:10px;display:block}
+.svc-chips{display:flex;flex-wrap:wrap;gap:7px}
 .chip{
-  display:inline-flex;align-items:center;gap:6px;
-  padding:9px 16px;border-radius:50px;
+  display:inline-flex;align-items:center;gap:5px;
+  padding:8px 14px;border-radius:50px;
   background:var(--bg-2);color:var(--ink-2);
-  font-size:.85rem;font-weight:500;cursor:pointer;
-  border:1.5px solid transparent;transition:all .25s var(--ease);user-select:none;
+  font-size:.83rem;font-weight:500;cursor:pointer;
+  border:1.5px solid transparent;transition:all .2s var(--ease);user-select:none;
 }
-.chip:hover{background:var(--brand-tint);color:var(--brand)}
+.chip:hover{background:var(--line-soft)}
 .chip input{display:none}
-.chip.checked{background:var(--brand);color:#fff;border-color:var(--brand)}
-.chip.checked::before{content:'✓';font-weight:700;font-size:.85rem}
+.chip.checked{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chip.checked::before{content:'✓';font-weight:700;font-size:.8rem}
 
-.qf-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:6px}
+.qf-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:8px}
 .qf-actions .btn{flex:1;min-width:140px}
 .qf-actions .note{font-size:.78rem;color:var(--ink-4);margin-left:auto}
 
 /* ===== MODAL ===== */
 .modal{
   position:fixed;inset:0;z-index:2000;display:none;align-items:center;justify-content:center;
-  background:rgba(15,20,25,.6);backdrop-filter:blur(12px);
+  background:rgba(15,20,25,.6);backdrop-filter:blur(10px);
   padding:20px;
 }
-.modal.open{display:flex;animation:fadeIn .35s var(--ease)}
+.modal.open{display:flex;animation:fadeIn .3s var(--ease)}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .modal-card{
-  background:#fff;border-radius:var(--radius-lg);
-  max-width:560px;width:100%;max-height:90vh;overflow:auto;
+  background:#fff;border-radius:22px;
+  max-width:540px;width:100%;max-height:90vh;overflow:auto;
   box-shadow:var(--shadow-xl);
-  animation:popIn .4s var(--ease);
+  animation:popIn .35s var(--ease);
 }
-@keyframes popIn{from{opacity:0;transform:scale(.9) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+@keyframes popIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
 .modal-head{padding:32px 32px 0;text-align:center;position:relative}
 .modal-head .ic-success{
-  width:64px;height:64px;border-radius:50%;background:var(--brand-tint);
-  display:grid;place-items:center;margin:0 auto 18px;
+  width:60px;height:60px;border-radius:50%;background:var(--bg-2);
+  display:grid;place-items:center;margin:0 auto 16px;
 }
-.modal-head .ic-success svg{width:30px;height:30px;color:var(--brand);stroke-width:3}
-.modal-head h3{font-size:1.5rem;margin-bottom:8px}
-.modal-head p{color:var(--ink-3);font-size:.95rem}
-.modal-close{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:1.3rem;color:var(--ink-3);transition:.2s}
+.modal-head .ic-success svg{width:28px;height:28px;color:var(--ink);stroke-width:3}
+.modal-head h3{font-size:1.4rem;margin-bottom:6px}
+.modal-head .qtw{
+  display:inline-block;margin-top:6px;padding:5px 14px;border-radius:50px;
+  background:var(--ink);color:#fff;font-family:var(--font-en);font-weight:700;font-size:.85rem;letter-spacing:.05em;
+}
+.modal-head p{color:var(--ink-3);font-size:.92rem;margin-top:10px}
+.modal-close{position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:1.3rem;color:var(--ink-3)}
 .modal-close:hover{background:var(--bg-2);color:var(--ink)}
-.modal-body{padding:24px 32px}
+.modal-body{padding:20px 32px}
 .q-summary{
-  background:var(--bg-2);border-radius:var(--radius-sm);padding:20px;
-  font-size:.88rem;line-height:1.7;color:var(--ink-2);white-space:pre-wrap;
-  font-family:'Courier New',monospace;max-height:240px;overflow:auto;
-  border:1px solid var(--line-soft);
+  background:var(--bg-2);border-radius:12px;padding:18px;
+  font-size:.86rem;line-height:1.65;color:var(--ink-2);white-space:pre-wrap;
+  font-family:'Courier New',monospace;max-height:220px;overflow:auto;
 }
-.modal-actions{padding:24px 32px 32px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.modal-actions .btn{width:100%}
+.modal-actions{padding:18px 32px 28px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.modal-actions .btn{width:100%;font-size:.9rem;padding:12px 16px}
 .modal-actions .btn.full{grid-column:span 2}
 
-/* ===== CONTACT ===== */
-.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:36px}
-.c-cards{display:flex;flex-direction:column;gap:14px}
-.c-card{
-  display:flex;align-items:center;gap:18px;padding:22px;
-  background:#fff;border:1px solid var(--line-soft);border-radius:var(--radius);
-  transition:all .3s var(--ease);
-}
-.c-card:hover{border-color:var(--brand-3);transform:translateX(4px);box-shadow:var(--shadow)}
-.c-card .ic{width:48px;height:48px;border-radius:13px;background:var(--brand-tint);display:grid;place-items:center;flex-shrink:0}
-.c-card .ic svg{width:22px;height:22px;color:var(--brand)}
-.c-card .lbl{font-size:.78rem;color:var(--ink-3)}
-.c-card .v{font-weight:600;color:var(--ink);font-size:1rem;margin-top:2px}
-.c-card .v.address{font-size:.88rem;font-weight:500;color:var(--ink-2);line-height:1.5;margin-top:4px}
-.map-box{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line-soft);min-height:480px;background:var(--bg-2)}
-.map-box iframe{width:100%;height:100%;min-height:480px;border:0;display:block}
-
-/* ===== FINAL CTA ===== */
-.final{
-  background:var(--ink);color:#fff;padding:120px 0;text-align:center;
-  position:relative;overflow:hidden;
-}
-.final::before{
-  content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);
-  width:600px;height:600px;border-radius:50%;
-  background:radial-gradient(circle,rgba(52,211,153,.15),transparent 70%);
-}
-.final-inner{position:relative;z-index:2}
-.final h2{color:#fff;margin-bottom:18px}
-.final p{color:rgba(255,255,255,.7);font-size:1.15rem;margin-bottom:36px}
-.final .phone{
-  display:block;font-family:var(--font-en);font-weight:700;
-  font-size:clamp(2.4rem,7vw,4rem);letter-spacing:-.02em;
-  background:linear-gradient(135deg,var(--brand-3),#A7F3D0);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  margin:28px 0;
-}
-.final-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-
 /* ===== FOOTER ===== */
-footer{background:#0A0A0B;color:rgba(255,255,255,.7);padding:60px 0 30px}
-.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
-.foot-brand{max-width:340px}
-.foot-brand img{height:48px;margin-bottom:18px;filter:brightness(0) invert(1)}
-.foot-brand p{color:rgba(255,255,255,.55);font-size:.92rem;line-height:1.7}
-.foot-col h4{color:#fff;font-size:.95rem;margin-bottom:18px;font-weight:700}
-.foot-col a,.foot-col p{display:block;color:rgba(255,255,255,.55);font-size:.9rem;margin-bottom:11px;transition:color .25s var(--ease)}
+footer{
+  background:var(--ink);color:rgba(255,255,255,.7);
+  padding:48px 0 24px;
+}
+.foot-grid{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:36px;
+}
+.foot-brand img{height:54px;width:auto;margin-bottom:14px;filter:brightness(0) invert(1)}
+.foot-brand p{color:rgba(255,255,255,.6);font-size:.88rem;line-height:1.6;max-width:340px}
+.foot-col h4{color:#fff;font-size:.92rem;margin-bottom:14px}
+.foot-col a,.foot-col p{display:block;color:rgba(255,255,255,.55);font-size:.87rem;margin-bottom:9px;transition:color .25s var(--ease)}
 .foot-col a:hover{color:#fff}
 .foot-bot{
-  border-top:1px solid rgba(255,255,255,.08);padding-top:24px;
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
-  color:rgba(255,255,255,.4);font-size:.83rem;
+  border-top:1px solid rgba(255,255,255,.08);padding-top:20px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+  color:rgba(255,255,255,.4);font-size:.8rem;
 }
 
 /* ===== FLOATING ===== */
-.float{position:fixed;right:18px;bottom:18px;z-index:99;display:flex;flex-direction:column;gap:10px}
+.float{position:fixed;right:14px;bottom:14px;z-index:99;display:flex;flex-direction:column;gap:10px}
 .fbtn{
-  width:54px;height:54px;border-radius:50%;display:grid;place-items:center;
-  box-shadow:0 6px 20px rgba(0,0,0,.15);transition:all .3s var(--ease);
-  background:#fff;position:relative;
+  width:50px;height:50px;border-radius:50%;display:grid;place-items:center;
+  box-shadow:0 6px 18px rgba(0,0,0,.14);transition:all .3s var(--ease);
 }
-.fbtn:hover{transform:scale(1.08) translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.2)}
-.fbtn svg{width:24px;height:24px}
-.fbtn.call{background:var(--brand)}
-.fbtn.call svg{color:#fff}
-.fbtn.line{background:#06C755}
-.fbtn.line svg{color:#fff}
-.fbtn.fb{background:#1877F2}
-.fbtn.fb svg{color:#fff}
-.fbtn.up{background:var(--ink);opacity:0;pointer-events:none}
+.fbtn:hover{transform:scale(1.08);box-shadow:0 12px 28px rgba(0,0,0,.2)}
+.fbtn svg{width:22px;height:22px}
+.fbtn.call{background:var(--ink);color:#fff}
+.fbtn.line{background:#06C755;color:#fff}
+.fbtn.up{background:#fff;color:var(--ink);border:1px solid var(--line);opacity:0;pointer-events:none}
 .fbtn.up.show{opacity:1;pointer-events:auto}
-.fbtn.up svg{color:#fff}
 
-/* tooltip */
-.fbtn::after{
-  content:attr(data-tip);position:absolute;right:64px;top:50%;transform:translateY(-50%);
-  background:var(--ink);color:#fff;padding:6px 12px;border-radius:8px;
-  font-size:.78rem;white-space:nowrap;opacity:0;pointer-events:none;transition:.25s;
-}
-.fbtn:hover::after{opacity:1;transform:translateY(-50%) translateX(-4px)}
-
-/* ===== LIGHTBOX ===== */
-.lb{
-  position:fixed;inset:0;z-index:1500;display:none;
-  background:rgba(15,20,25,.96);backdrop-filter:blur(8px);
-  align-items:center;justify-content:center;
-}
-.lb.open{display:flex;animation:fadeIn .3s var(--ease)}
-.lb img{max-width:92%;max-height:86vh;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
-.lb-x{position:absolute;top:24px;right:30px;font-size:2.2rem;color:#fff;cursor:pointer;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.1);transition:.25s}
-.lb-x:hover{background:rgba(255,255,255,.2)}
-.lb-arr{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.1);color:#fff;display:grid;place-items:center;cursor:pointer;transition:.25s;font-size:1.6rem}
-.lb-arr:hover{background:var(--brand)}
-.lb-arr.prev{left:24px}.lb-arr.next{right:24px}
-.lb-cap{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.8);font-size:.92rem;background:rgba(0,0,0,.4);padding:8px 16px;border-radius:50px;backdrop-filter:blur(6px)}
-
-/* reveal */
-.reveal{opacity:0;transform:translateY(36px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+/* ===== Reveal ===== */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .reveal.in{opacity:1;transform:translateY(0)}
 
 /* ===== RESPONSIVE ===== */
-@media(max-width:1024px){
-  .svc-grid{grid-template-columns:repeat(3,1fr)}
-  .process{grid-template-columns:repeat(4,1fr);gap:36px 0}
-  .process::before{display:none}
-  .quote-card{grid-template-columns:1fr}
-  .quote-side{padding:40px}
-}
-@media(max-width:768px){
-  .menu{
-    position:fixed;top:0;right:-100%;width:80%;max-width:320px;height:100vh;
-    flex-direction:column;align-items:stretch;background:#fff;padding:90px 24px 30px;gap:4px;
-    transition:right .4s var(--ease);box-shadow:-10px 0 40px rgba(0,0,0,.1);
-  }
-  .menu.open{right:0}
-  .menu a{padding:14px 16px;width:100%}
-  .menu .btn{margin:8px 0 0;justify-content:center}
-  .hamburger{display:flex}
-  .stats-grid{grid-template-columns:repeat(2,1fr);gap:30px}
-  .gallery{columns:2}
+@media(max-width:980px){
   .svc-grid{grid-template-columns:repeat(2,1fr)}
-  .process{grid-template-columns:repeat(3,1fr);gap:32px 0}
-  .contact-grid{grid-template-columns:1fr}
+  .hero-grid{grid-template-columns:1fr;gap:50px;text-align:center}
+  .hero-text .hero-cta{justify-content:center}
+  .iphone{transform:none}
+}
+@media(max-width:640px){
+  .sec{padding:70px 0}
+  .hero{padding:100px 0 50px}
   .qf-row{grid-template-columns:1fr;gap:14px}
-  .quote-form{padding:36px 28px}
+  .quote-card{padding:32px 22px}
   .qf-actions{flex-direction:column;align-items:stretch}
   .qf-actions .note{margin:0;text-align:center}
-  .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
-  .showcase-arrow{display:none}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:24px}
+  .foot-bot{flex-direction:column;text-align:center}
+  .iphone{width:240px;height:500px;border-radius:42px;padding:12px}
+  .screen{border-radius:32px}
   .modal-actions{grid-template-columns:1fr}
   .modal-actions .btn.full{grid-column:span 1}
+  .fbtn{width:46px;height:46px}
 }
-@media(max-width:480px){
-  .sec{padding:80px 0}
-  .hero{padding:110px 0 60px}
-  .gallery{columns:1}
+@media(max-width:380px){
   .svc-grid{grid-template-columns:1fr}
-  .process{grid-template-columns:repeat(2,1fr)}
   .foot-grid{grid-template-columns:1fr}
-  .foot-bot{flex-direction:column;text-align:center}
-  .float{right:14px;bottom:14px}
-  .fbtn{width:48px;height:48px}
-  .fbtn svg{width:22px;height:22px}
-  .fbtn::after{display:none}
-  .stat .n{font-size:2.4rem}
 }
 </style>
 </head>
@@ -616,220 +499,223 @@ footer{background:#0A0A0B;color:rgba(255,255,255,.7);padding:60px 0 30px}
       <img src="images/logo.png" alt="MD Engineering Logo">
       <div class="brand-text"><b>MD Engineering</b><small>& Supply Co., Ltd.</small></div>
     </a>
-    <div class="menu" id="menu">
-      <a href="#home">หน้าแรก</a>
-      <a href="#services">บริการ</a>
-      <a href="#works">ผลงาน</a>
-      <a href="#process">ขั้นตอน</a>
-      <a href="#quote">ขอใบเสนอราคา</a>
-      <a href="#contact">ติดต่อ</a>
-      <a href="#quote" class="btn btn-primary">เริ่มโครงการ</a>
+    <div class="nav-actions">
+      <a href="tel:0952914565" class="nav-icon call" aria-label="โทร" data-track="call">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+      <a href="https://line.me/ti/p/eDE1lPEqK3" target="_blank" rel="noopener" class="nav-icon line" aria-label="LINE" data-track="line">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.64 2 10.1c0 4 3.55 7.34 8.35 7.97.32.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.01.89.55s5.86-3.45 8-5.91C21.36 13.35 22 11.79 22 10.1 22 5.64 17.52 2 12 2z"/></svg>
+      </a>
+      <a href="#quote" class="btn btn-dark nav-quote">ขอใบเสนอราคา</a>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="เมนู"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <!-- ===== HERO ===== -->
 <header class="hero" id="home">
+  <!-- Blueprint background -->
+  <div class="blueprint-bg">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1D1D1F" stroke-width=".5" opacity=".15"/>
+        </pattern>
+        <pattern id="gridBig" width="200" height="200" patternUnits="userSpaceOnUse">
+          <path d="M 200 0 L 0 0 0 200" fill="none" stroke="#1D1D1F" stroke-width="1" opacity=".18"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)"/>
+      <rect width="100%" height="100%" fill="url(#gridBig)"/>
+      <!-- Schematic floor plan lines -->
+      <g stroke="#1D1D1F" stroke-width="1.2" fill="none" opacity=".18">
+        <rect x="80" y="120" width="320" height="220"/>
+        <rect x="120" y="160" width="120" height="80"/>
+        <rect x="260" y="160" width="100" height="80"/>
+        <rect x="120" y="260" width="240" height="60"/>
+        <line x1="80" y1="220" x2="400" y2="220"/>
+        <line x1="240" y1="120" x2="240" y2="220"/>
+        <!-- Dimension lines -->
+        <line x1="80" y1="100" x2="400" y2="100" stroke-dasharray="4 3"/>
+        <line x1="80" y1="90" x2="80" y2="110"/>
+        <line x1="400" y1="90" x2="400" y2="110"/>
+        <!-- Section detail -->
+        <circle cx="600" cy="500" r="80"/>
+        <circle cx="600" cy="500" r="40"/>
+        <line x1="520" y1="500" x2="680" y2="500"/>
+        <line x1="600" y1="420" x2="600" y2="580"/>
+      </g>
+      <g stroke="#1D1D1F" stroke-width=".8" fill="none" opacity=".12">
+        <rect x="800" y="540" width="320" height="200"/>
+        <line x1="800" y1="600" x2="1120" y2="600"/>
+        <line x1="800" y1="660" x2="1120" y2="660"/>
+        <line x1="900" y1="540" x2="900" y2="740"/>
+        <line x1="1020" y1="540" x2="1020" y2="740"/>
+      </g>
+      <!-- Numbers / labels (faint) -->
+      <g fill="#1D1D1F" opacity=".18" font-family="monospace" font-size="11">
+        <text x="230" y="95">3.20</text>
+        <text x="60" y="225">A</text>
+        <text x="240" y="115">B</text>
+        <text x="405" y="225">C</text>
+      </g>
+    </svg>
+  </div>
+
   <div class="wrap">
-    <div class="hero-inner">
-      <span class="tag"><span class="dot"></span>Engineer-Controlled · ISO Standard</span>
-      <h1>
-        <span class="precision">Precision.</span>
-        <span class="elevated">Elevated.</span>
-      </h1>
-      <p class="sub-th">งานวิศวกรรม พื้นโรงงาน กันซึม และระบบครบวงจร โดยทีม<b>วิศวกรผู้เชี่ยวชาญ</b><br>สำรวจหน้างานฟรี · ออกแบบฟรี · เสนอราคาภายใน <b>24 ชั่วโมง</b></p>
-      <div class="hero-cta">
-        <a href="#quote" class="btn btn-primary btn-lg">ขอใบเสนอราคาฟรี</a>
-        <a href="tel:0952914565" class="btn btn-outline btn-lg">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          095-291-4565
-        </a>
+    <div class="hero-grid">
+      <div class="hero-text">
+        <span class="tag"><span class="dot"></span>Engineer-Controlled · ISO Standard</span>
+        <h1>
+          <span class="precision">Precision.</span>
+          <span class="elevated">Elevated.</span>
+        </h1>
+        <p class="lead">งานวิศวกรรม <b>พื้นโรงงาน กันซึม</b> และระบบครบวงจร ออกแบบและควบคุมงานโดยทีมวิศวกรผู้เชี่ยวชาญ</p>
+        <p class="free"><span>ฟรีสำรวจหน้างาน</span> · <span>ฟรีออกแบบ</span> · เสนอราคาภายใน <span>24 ชั่วโมง</span></p>
+        <div class="hero-cta">
+          <a href="#quote" class="btn btn-dark btn-lg">ขอใบเสนอราคาฟรี</a>
+          <a href="#services" class="btn btn-outline btn-lg">ดูบริการของเรา</a>
+        </div>
       </div>
-      <div class="hero-trust">
-        <span class="t-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>15+ ปีประสบการณ์</span>
-        <span class="t-sep"></span>
-        <span class="t-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>100+ โครงการสำเร็จ</span>
-        <span class="t-sep"></span>
-        <span class="t-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>วิศวกรควบคุม 100%</span>
+
+      <!-- iPhone 17 Pro Cosmic Orange with rotating screens -->
+      <div class="iphone-wrap">
+        <div class="iphone">
+          <div class="screen">
+            <div class="notch"></div>
+            <div class="status-bar">
+              <span>9:41</span>
+              <div class="icons">
+                <svg viewBox="0 0 16 12" width="14" height="10" fill="currentColor"><path d="M14 0h2v12h-2zM10 3h2v9h-2zM6 6h2v6H6zM2 8h2v4H2z"/></svg>
+                <svg viewBox="0 0 16 12" width="14" height="10" fill="currentColor"><path d="M8 2c-2.5 0-4.5 1-6 2l1.5 1.5C4.7 4.5 6.2 4 8 4s3.3.5 4.5 1.5L14 4c-1.5-1-3.5-2-6-2zm0 4c-1.5 0-2.8.5-3.8 1.3L5.7 8.8C6.3 8.3 7.1 8 8 8s1.7.3 2.3.8l1.5-1.5C10.8 6.5 9.5 6 8 6zm0 4a1.3 1.3 0 1 0 0 2.6A1.3 1.3 0 0 0 8 10z"/></svg>
+                <span>100</span>
+                <svg viewBox="0 0 24 12" width="22" height="10" fill="none" stroke="currentColor"><rect x="1" y="2" width="20" height="8" rx="1.5"/><rect x="22" y="4" width="1.5" height="4" rx=".5" fill="currentColor"/><rect x="2.5" y="3.5" width="17" height="5" rx=".5" fill="currentColor"/></svg>
+              </div>
+            </div>
+            <div class="slides">
+              <!-- Slide 1: Brand identity -->
+              <div class="slide active" data-slide="brand">
+                <div class="big-ic brand"><img src="images/logo.png" alt="MD"></div>
+                <h4>MD Engineering</h4>
+                <div class="val">Precision.</div>
+                <div class="val-th">งานวิศวกรรมครบวงจร</div>
+              </div>
+              <!-- Slide 2: Call -->
+              <a class="slide" data-slide="call" href="tel:0952914565" data-track="phone-iphone">
+                <div class="big-ic call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                <h4>Call · โทร</h4>
+                <div class="val">095-291-4565</div>
+                <div class="val-th">คุณชาลิสา · ฝ่ายขาย</div>
+                <span class="tap-btn green">แตะเพื่อโทร</span>
+              </a>
+              <!-- Slide 3: LINE -->
+              <a class="slide" data-slide="line" href="https://line.me/ti/p/eDE1lPEqK3" target="_blank" rel="noopener" data-track="line-iphone">
+                <div class="big-ic line"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.64 2 10.1c0 4 3.55 7.34 8.35 7.97.32.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.01.89.55s5.86-3.45 8-5.91C21.36 13.35 22 11.79 22 10.1 22 5.64 17.52 2 12 2z"/></svg></div>
+                <h4>LINE · แอดไลน์</h4>
+                <div class="val">@mdengineer</div>
+                <div class="val-th">แชทกับเราได้ทันที</div>
+                <span class="tap-btn line-c">แตะเพื่อเพิ่มเพื่อน</span>
+              </a>
+              <!-- Slide 4: Email -->
+              <a class="slide" data-slide="mail" href="mailto:mdengineeringandsupply@gmail.com" data-track="email-iphone">
+                <div class="big-ic mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="m22 7-10 5L2 7"/></svg></div>
+                <h4>Email · อีเมล</h4>
+                <div class="val" style="font-size:.95rem">mdengineering<br>andsupply@gmail.com</div>
+                <span class="tap-btn mail-c">แตะเพื่อส่งอีเมล</span>
+              </a>
+            </div>
+            <div class="dots" id="phoneDots"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </header>
 
-<!-- ===== HERO SHOWCASE (Slideshow) ===== -->
-<section class="showcase">
-  <div class="showcase-frame">
-    <div class="showcase-stage" id="showcase">
-      <div class="showcase-slide active" data-cap="งานกันซึมดาดฟ้า – Waterproofing System">
-        <img src="images/waterproofing-rooftop.jpg" alt="งานกันซึมดาดฟ้า">
-        <div class="label">Waterproofing — งานกันซึมดาดฟ้า</div>
-      </div>
-      <div class="showcase-slide" data-cap="งานพื้น Epoxy – ออกแบบลวดลายตามต้องการ">
-        <img src="images/epoxy-blue.jpg" alt="งานพื้น Epoxy">
-        <div class="label">Epoxy Flooring — พื้นอีพ็อกซี่</div>
-      </div>
-      <div class="showcase-slide" data-cap="พื้นทางเดินภายในโรงงาน Pharmaceutical">
-        <img src="images/epoxy-corridor.jpg" alt="พื้นโรงงานยา">
-        <div class="label">Cleanroom Flooring — พื้นห้องคลีนรูม</div>
-      </div>
-      <div class="showcase-slide" data-cap="พื้น Epoxy สีแดง – Anti-static Grade">
-        <img src="images/epoxy-red.jpg" alt="พื้น Epoxy สีแดง">
-        <div class="label">Industrial Epoxy — พื้นโรงงานอุตสาหกรรม</div>
-      </div>
-      <button class="showcase-arrow prev" aria-label="ก่อนหน้า"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg></button>
-      <button class="showcase-arrow next" aria-label="ถัดไป"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg></button>
-    </div>
-    <div class="showcase-dots" id="showcaseDots"></div>
-  </div>
-</section>
-
-<!-- ===== BRAND STATEMENT ===== -->
-<section class="statement">
-  <div class="wrap reveal">
-    <h2>เราไม่ได้แค่ <em>"รับงาน"</em> — เราคือ<em>วิศวกร</em>ที่เข้าใจทุกรายละเอียดของหน้างาน<br>ออกแบบให้ผลงานอยู่ทน <em>15–20 ปี</em> ไม่ใช่แค่สวยตอนส่งมอบ</h2>
-    <div class="sig">— A Legacy of Engineering & Supply Solutions</div>
-  </div>
-</section>
-
-<!-- ===== STATS ===== -->
-<section class="stats">
-  <div class="wrap">
-    <div class="stats-grid">
-      <div class="stat reveal"><div class="n" data-count="15" data-suffix="+">0</div><div class="l">ปีประสบการณ์</div></div>
-      <div class="stat reveal"><div class="n" data-count="100" data-suffix="+">0</div><div class="l">โครงการสำเร็จ</div></div>
-      <div class="stat reveal"><div class="n" data-count="100" data-suffix="%">0</div><div class="l">วิศวกรควบคุม</div></div>
-      <div class="stat reveal"><div class="n">24<span style="font-size:.5em">ชม.</span></div><div class="l">ออกใบเสนอราคา</div></div>
-    </div>
-  </div>
-</section>
-
 <!-- ===== SERVICES ===== -->
 <section class="sec" id="services">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="tag">Our Services</span>
-      <h2>บริการครบวงจรในที่เดียว</h2>
-      <p>จบงานในที่เดียว ตั้งแต่ออกแบบ ติดตั้ง จนถึงรับประกัน ครอบคลุมโรงงานอุตสาหกรรม โรงพยาบาล โชว์รูม คลังสินค้า และอาคารพาณิชย์</p>
+      <span class="tag">Services</span>
+      <h2>บริการของเรา</h2>
+      <p>ครอบคลุมโรงงาน โรงพยาบาล โชว์รูม คลังสินค้า อาคารพาณิชย์ — จบในที่เดียว</p>
     </div>
     <div class="svc-grid">
       <div class="svc reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2s7 7 7 12a7 7 0 0 1-14 0c0-5 7-12 7-12z"/></svg></div>
         <h3>Waterproofing</h3>
-        <p>กันซึมดาดฟ้า ห้องน้ำ โครงสร้าง ป้องกันรั่วซึม 100% รับประกันยาวนาน</p>
-        <span class="more">เรียนรู้เพิ่ม →</span>
+        <p>กันซึมดาดฟ้า ห้องน้ำ โครงสร้าง ป้องกันรั่วซึม</p>
       </div>
       <div class="svc reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg></div>
         <h3>Epoxy Flooring</h3>
-        <p>พื้นอีพ็อกซี่ผิวเรียบ แข็งแรง ทนสารเคมี เหมาะกับโรงงานทุกประเภท</p>
-        <span class="more">เรียนรู้เพิ่ม →</span>
+        <p>พื้นอีพ็อกซี่ แข็งแรง ทนสารเคมี เหมาะกับโรงงาน</p>
       </div>
       <div class="svc reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
         <h3>PU Flooring</h3>
-        <p>พื้น Polyurethane ยืดหยุ่นสูง ทนแรงกระแทก เหมาะกับโรงงานอาหาร</p>
-        <span class="more">เรียนรู้เพิ่ม →</span>
+        <p>พื้น Polyurethane ทนแรงกระแทก โรงงานอาหาร</p>
       </div>
       <div class="svc reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v8M12 14v8M2 12h8M14 12h8"/><circle cx="12" cy="12" r="2"/></svg></div>
         <h3>Self-Leveling</h3>
-        <p>ปรับระดับพื้นไร้รอยต่อ ผิวเรียบเสมอกัน เหมาะกับงานความเรียบสูง</p>
-        <span class="more">เรียนรู้เพิ่ม →</span>
+        <p>ปรับระดับพื้นไร้รอยต่อ ผิวเรียบเสมอกัน</p>
       </div>
       <div class="svc reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
         <h3>Solar Rooftop</h3>
-        <p>ระบบโซลาร์เซลล์อุตสาหกรรม ลดค่าไฟระยะยาว ออกแบบโดยวิศวกรไฟฟ้า</p>
-        <span class="more">เรียนรู้เพิ่ม →</span>
+        <p>ระบบโซลาร์เซลล์อุตสาหกรรม ลดค่าไฟระยะยาว</p>
       </div>
       <div class="svc reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 8h20M2 16h20M6 4v16M18 4v16"/></svg></div>
-        <h3>Iso Wall & Cleanroom</h3>
-        <p>ผนังฉนวนสำเร็จรูป ห้องคลีนรูม ห้องเย็น ห้องความดันลบ มาตรฐานโรงพยาบาล</p>
-        <span class="more">เรียนรู้เพิ่ม →</span>
+        <h3>Cleanroom & Iso Wall</h3>
+        <p>ห้องคลีนรูม ห้องเย็น มาตรฐานโรงพยาบาล</p>
       </div>
       <div class="svc reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3"/></svg></div>
         <h3>CCTV & Security</h3>
-        <p>กล้องวงจรปิดความละเอียดสูง สแกนลายนิ้วมือ Access Control บ้าน-สำนักงาน</p>
-        <span class="more">เรียนรู้เพิ่ม →</span>
+        <p>กล้องวงจรปิด สแกนลายนิ้วมือ Access Control</p>
       </div>
       <div class="svc reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 9h2M13 9h2M9 13h2M13 13h2M9 17h2M13 17h2"/></svg></div>
         <h3>Construction</h3>
-        <p>รับเหมาก่อสร้าง รีโนเวท ฝ้าเพดาน ผนังเบา ทาสี ครบวงจรโดยทีมมืออาชีพ</p>
-        <span class="more">เรียนรู้เพิ่ม →</span>
+        <p>รับเหมา รีโนเวท ฝ้า ผนังเบา ทาสี ครบวงจร</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== WORK GALLERY ===== -->
+<!-- ===== WORKS SLIDESHOW ===== -->
 <section class="sec sec-soft" id="works">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="tag">Featured Works</span>
       <h2>ผลงานจริงจากหน้างาน</h2>
-      <p>ตัวอย่างงานที่ทีมวิศวกรของเราออกแบบและติดตั้งด้วยมาตรฐานสูงสุด — คลิกเพื่อดูภาพขนาดเต็ม</p>
+      <p>ตัวอย่างงานที่เราออกแบบและติดตั้ง</p>
     </div>
-    <div class="gallery" id="gallery">
-      <div class="gitem reveal" data-cap="งานกันซึมดาดฟ้า – Waterproofing System">
-        <img src="images/waterproofing-rooftop.jpg" alt="Waterproofing">
-        <div class="ov"><span class="cat">Waterproofing</span><span class="t">กันซึมดาดฟ้า</span></div>
+    <div class="works-wrap reveal">
+      <div class="works-stage" id="works">
+        <div class="works-slide active"><img src="images/waterproofing-rooftop.jpg" alt="กันซึมดาดฟ้า"><div class="label">Waterproofing · กันซึมดาดฟ้า</div></div>
+        <div class="works-slide"><img src="images/epoxy-blue.jpg" alt="พื้น Epoxy"><div class="label">Epoxy Flooring · พื้นอีพ็อกซี่</div></div>
+        <div class="works-slide"><img src="images/epoxy-corridor.jpg" alt="Cleanroom"><div class="label">Cleanroom · พื้นห้องคลีนรูม</div></div>
+        <div class="works-slide"><img src="images/epoxy-red.jpg" alt="Industrial"><div class="label">Industrial · พื้นโรงงาน</div></div>
       </div>
-      <div class="gitem reveal" data-cap="งานพื้น Epoxy ลวดลายพิเศษ">
-        <img src="images/epoxy-blue.jpg" alt="Epoxy Pattern">
-        <div class="ov"><span class="cat">Epoxy Flooring</span><span class="t">พื้นอีพ็อกซี่ ลวดลายพิเศษ</span></div>
-      </div>
-      <div class="gitem reveal" data-cap="พื้นโรงงานยา – Cleanroom Grade">
-        <img src="images/epoxy-corridor.jpg" alt="Cleanroom Floor">
-        <div class="ov"><span class="cat">Cleanroom</span><span class="t">พื้นโรงงานยา / Cleanroom</span></div>
-      </div>
-      <div class="gitem reveal" data-cap="พื้น Epoxy สีแดง โรงงานอุตสาหกรรม">
-        <img src="images/epoxy-red.jpg" alt="Red Epoxy">
-        <div class="ov"><span class="cat">Industrial</span><span class="t">พื้นโรงงานอุตสาหกรรม</span></div>
-      </div>
-      <div class="gitem reveal" data-cap="ตัวอย่างผลงาน Epoxy / PU / Waterproofing">
-        <img src="images/services-overview.jpg" alt="Services Overview">
-        <div class="ov"><span class="cat">Portfolio</span><span class="t">รวมผลงาน Epoxy / PU / Waterproof</span></div>
-      </div>
+      <div class="works-dots" id="worksDots"></div>
     </div>
   </div>
 </section>
 
-<!-- ===== FLOOR STRUCTURE FEATURE ===== -->
-<section class="sec" id="structure">
+<!-- ===== FLOOR STRUCTURE ===== -->
+<section class="sec">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="tag">Engineering Detail</span>
-      <h2>โครงสร้างพื้นและขั้นตอนติดตั้ง</h2>
-      <p>เราใส่ใจทุกชั้นของพื้น — ตั้งแต่ Primer จนถึง Topcoat ด้วยมาตรฐานสากล เพื่อความทนทานสูงสุด</p>
+      <h2>โครงสร้างพื้น 5 ชั้น</h2>
+      <p>ใส่ใจทุกชั้นตั้งแต่ Primer จนถึง Topcoat ตามมาตรฐานสากล</p>
     </div>
   </div>
-  <div class="feature-img reveal">
-    <div class="feature-img-frame">
+  <div class="floor-wrap reveal">
+    <div class="floor-frame">
       <img src="images/floor-structure.jpg" alt="โครงสร้างพื้นและขั้นตอนติดตั้ง" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<!-- ===== PROCESS ===== -->
-<section class="sec sec-soft" id="process">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="tag">How We Work</span>
-      <h2>ขั้นตอนการทำงาน</h2>
-      <p>โปร่งใส ตรวจสอบได้ทุกขั้นตอน ตั้งแต่ติดต่อจนส่งมอบงาน</p>
-    </div>
-    <div class="process">
-      <div class="p-step reveal"><div class="n">1</div><h4>ติดต่อเรา</h4><p>โทร / LINE / Form</p></div>
-      <div class="p-step reveal"><div class="n">2</div><h4>สำรวจฟรี</h4><p>วิศวกรเข้าหน้างาน</p></div>
-      <div class="p-step reveal"><div class="n">3</div><h4>ออกแบบ</h4><p>โซลูชั่นเฉพาะงาน</p></div>
-      <div class="p-step reveal"><div class="n">4</div><h4>เสนอราคา</h4><p>ภายใน 24 ชม.</p></div>
-      <div class="p-step reveal"><div class="n">5</div><h4>ติดตั้ง</h4><p>ทีมช่างคุมงาน</p></div>
-      <div class="p-step reveal"><div class="n">6</div><h4>ตรวจรับ</h4><p>QC ครบทุกจุด</p></div>
-      <div class="p-step reveal"><div class="n">7</div><h4>รับประกัน</h4><p>ดูแลหลังการขาย</p></div>
     </div>
   </div>
 </section>
@@ -840,147 +726,62 @@ footer{background:#0A0A0B;color:rgba(255,255,255,.7);padding:60px 0 30px}
     <div class="sec-head reveal">
       <span class="tag">Request a Quote</span>
       <h2>ขอใบเสนอราคา</h2>
-      <p>กรอกข้อมูลเพียง 1 นาที — ทีมงานจะติดต่อกลับและออกใบเสนอราคาภายใน 24 ชั่วโมง</p>
+      <p>กรอกข้อมูลให้เรา ทีมงานจะติดต่อกลับและออกใบเสนอราคาภายใน 24 ชั่วโมง</p>
     </div>
 
     <div class="quote-card reveal">
-      <aside class="quote-side">
-        <span class="tag">For Project Inquiry</span>
-        <h2>เริ่มต้นโครงการ<br>กับเรา</h2>
-        <p>ปรึกษาฟรี สำรวจหน้างานฟรี วิศวกรของเราพร้อมออกแบบโซลูชั่นเฉพาะให้กับงานของคุณ</p>
-        <div class="feat">
-          <div class="f"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>สำรวจหน้างานฟรี</div>
-          <div class="f"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>ออกแบบฟรีโดยวิศวกร</div>
-          <div class="f"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>ไม่มีค่ามัดจำเริ่มต้น</div>
-          <div class="f"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>รับประกันงาน</div>
-        </div>
-        <div class="contact-quick">
-          <a href="tel:0952914565"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>คุณชาลิสา 095-291-4565</a>
-          <a href="https://line.me/ti/p/eDE1lPEqK3" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.64 2 10.1c0 4 3.55 7.34 8.35 7.97.32.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.01.89.55s5.86-3.45 8-5.91C21.36 13.35 22 11.79 22 10.1 22 5.64 17.52 2 12 2z"/></svg>LINE Official</a>
-          <a href="mailto:mdengineeringandsupply@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>อีเมล</a>
-        </div>
-      </aside>
-
-      <form class="quote-form" id="quoteForm" novalidate>
+      <form id="quoteForm" novalidate>
         <div class="qf-row">
           <div class="qf-field">
-            <label>ชื่อ – นามสกุล <span class="req">*</span></label>
-            <input type="text" name="name" required placeholder="คุณ...">
-            <div class="qf-err" data-err="name">กรุณากรอกชื่อ</div>
+            <label>ชื่อ / บริษัท / หน่วยงาน</label>
+            <input type="text" name="name" placeholder="ชื่อบุคคล บริษัท หรือหน่วยงานของคุณ">
           </div>
           <div class="qf-field">
-            <label>เบอร์โทรศัพท์ <span class="req">*</span></label>
-            <input type="tel" name="phone" required placeholder="08x-xxx-xxxx" inputmode="tel">
-            <div class="qf-err" data-err="phone">กรุณากรอกเบอร์โทร</div>
+            <label>เลขประจำตัวผู้เสียภาษี</label>
+            <input type="text" name="taxId" placeholder="1111111111111" inputmode="numeric" maxlength="13">
           </div>
         </div>
 
         <div class="qf-row">
           <div class="qf-field">
-            <label>อีเมล (ถ้ามี)</label>
-            <input type="email" name="email" placeholder="example@email.com">
+            <label>LINE ID / เบอร์ติดต่อ <span class="req">*</span></label>
+            <input type="text" name="contact" required placeholder="09x-xxx-xxxx หรือ LINE ID">
+            <div class="qf-err" data-err="contact">กรุณากรอก LINE หรือเบอร์โทร</div>
           </div>
           <div class="qf-field">
-            <label>บริษัท / โครงการ (ถ้ามี)</label>
-            <input type="text" name="company" placeholder="ชื่อบริษัทหรือโครงการ">
+            <label>อีเมล <span class="req">*</span></label>
+            <input type="email" name="email" required placeholder="example@gmail.com">
+            <div class="qf-err" data-err="email">กรุณากรอกอีเมลให้ถูกต้อง</div>
           </div>
-        </div>
-
-        <div class="qf-field" style="margin-bottom:18px">
-          <label>ที่อยู่ / สถานที่หน้างาน <span class="req">*</span></label>
-          <input type="text" name="address" required placeholder="เช่น 123/45 ถนน... ตำบล... อำเภอ... จังหวัด...">
-          <div class="qf-err" data-err="address">กรุณากรอกที่อยู่</div>
         </div>
 
         <div class="qf-services">
-          <label class="main-label">บริการที่สนใจ (เลือกได้มากกว่า 1) <span class="req">*</span></label>
-          <div class="svc-chips" id="svcChips">
-            <label class="chip"><input type="checkbox" value="Waterproofing (กันซึม)">Waterproofing (กันซึม)</label>
+          <span class="qlabel">บริการที่สนใจ (เลือกได้มากกว่า 1)</span>
+          <div class="svc-chips">
+            <label class="chip"><input type="checkbox" value="Waterproofing">Waterproofing</label>
             <label class="chip"><input type="checkbox" value="Epoxy Flooring">Epoxy Flooring</label>
             <label class="chip"><input type="checkbox" value="PU Flooring">PU Flooring</label>
-            <label class="chip"><input type="checkbox" value="Self-Leveling / ปรับระดับพื้น">Self-Leveling</label>
-            <label class="chip"><input type="checkbox" value="Polishing / Coating">Polishing / Coating</label>
+            <label class="chip"><input type="checkbox" value="Self-Leveling">Self-Leveling</label>
             <label class="chip"><input type="checkbox" value="Cleanroom">Cleanroom</label>
-            <label class="chip"><input type="checkbox" value="Iso Wall / ห้องเย็น">Iso Wall / ห้องเย็น</label>
+            <label class="chip"><input type="checkbox" value="Iso Wall">Iso Wall</label>
             <label class="chip"><input type="checkbox" value="Solar Rooftop">Solar Rooftop</label>
-            <label class="chip"><input type="checkbox" value="CCTV / กล้องวงจรปิด">CCTV</label>
-            <label class="chip"><input type="checkbox" value="Access Control / ลายนิ้วมือ">Access Control</label>
-            <label class="chip"><input type="checkbox" value="ระบบไฟฟ้า">ระบบไฟฟ้า</label>
-            <label class="chip"><input type="checkbox" value="ทาสี ภายใน-ภายนอก">งานทาสี</label>
-            <label class="chip"><input type="checkbox" value="ฝ้าเพดาน / ผนังเบา">ฝ้า / ผนังเบา</label>
-            <label class="chip"><input type="checkbox" value="Construction / รับเหมาก่อสร้าง">Construction</label>
-            <label class="chip"><input type="checkbox" value="Renovation / รีโนเวท">Renovation</label>
+            <label class="chip"><input type="checkbox" value="CCTV">CCTV</label>
+            <label class="chip"><input type="checkbox" value="ทาสี / ฝ้า / ผนัง">ทาสี / ฝ้า / ผนัง</label>
+            <label class="chip"><input type="checkbox" value="Construction / Renovation">Construction</label>
           </div>
-          <div class="qf-err" data-err="services">กรุณาเลือกบริการอย่างน้อย 1 รายการ</div>
         </div>
 
-        <div class="qf-field" style="margin-bottom:22px">
-          <label>รายละเอียดเพิ่มเติม (พื้นที่ ขนาดงาน หรือคำถาม)</label>
-          <textarea name="message" placeholder="เช่น พื้นที่ประมาณ 500 ตร.ม. ต้องการสีเทา ทนสารเคมี เริ่มงานช่วง..."></textarea>
+        <div class="qf-field" style="margin-bottom:20px">
+          <label>รายละเอียดงาน</label>
+          <textarea name="details" placeholder="พื้นเก่าโรงจอดรถ ประมาณ 50 ตรม. ในร่ม ทนสารเคมี สีเทา เริ่มงานช่วง..."></textarea>
         </div>
 
         <div class="qf-actions">
-          <button type="submit" class="btn btn-primary btn-lg" style="flex:1.4">
-            ส่งข้อมูล &nbsp;→
-          </button>
+          <button type="submit" class="btn btn-dark btn-lg" style="flex:1.4">ส่งคำขอใบเสนอราคา &nbsp;→</button>
           <button type="button" class="btn btn-ghost" id="qfClear">ล้างข้อมูล</button>
           <span class="note">⚡ ตอบกลับภายใน 24 ชม.</span>
         </div>
       </form>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CONTACT ===== -->
-<section class="sec" id="contact">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="tag">Contact</span>
-      <h2>ติดต่อเรา</h2>
-      <p>ทีมงานพร้อมให้คำปรึกษาทุกช่องทาง — เลือกช่องทางที่สะดวกที่สุดสำหรับคุณ</p>
-    </div>
-    <div class="contact-grid">
-      <div class="c-cards">
-        <a href="tel:0952914565" class="c-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-          <div><div class="lbl">โทรฝ่ายขาย (คุณชาลิสา)</div><div class="v">095-291-4565</div></div>
-        </a>
-        <a href="https://line.me/ti/p/eDE1lPEqK3" target="_blank" rel="noopener" class="c-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.64 2 10.1c0 4 3.55 7.34 8.35 7.97.32.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.01.89.55s5.86-3.45 8-5.91C21.36 13.35 22 11.79 22 10.1 22 5.64 17.52 2 12 2z"/></svg></div>
-          <div><div class="lbl">LINE Official</div><div class="v">แชทกับเราได้ทันที</div></div>
-        </a>
-        <a href="mailto:mdengineeringandsupply@gmail.com" class="c-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></div>
-          <div><div class="lbl">อีเมล</div><div class="v" style="font-size:.92rem">mdengineeringandsupply@gmail.com</div></div>
-        </a>
-        <a href="https://www.facebook.com/mdengineerandsupply" target="_blank" rel="noopener" class="c-card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12a12 12 0 1 0-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.96.93-1.96 1.87V12h3.33l-.53 3.47h-2.8v8.38A12 12 0 0 0 24 12z"/></svg></div>
-          <div><div class="lbl">Facebook</div><div class="v">MD Engineer & Supply</div></div>
-        </a>
-        <div class="c-card reveal" style="cursor:default">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div><div class="lbl">ที่อยู่สำนักงานใหญ่</div><div class="v address">133/456 ซอยสำนักงานที่ดินบางบัวทอง ต.พิมลราช อ.บางบัวทอง จ.นนทบุรี 11110</div></div>
-        </div>
-      </div>
-      <div class="map-box reveal">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d425.60340859926254!2d100.4325706775791!3d13.916574514856972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e28ef655555555%3A0xbb22bdd60c78695a!2z4Lia4Lij4Li04Lip4Lix4LiXIOC5gOC4reC5h-C4oeC4lOC4tSDguYDguK3guYfguJnguIjguLTguYDguJnguLXguKLguKPguLTguYjguIcg4LmB4Lit4LiZ4LiU4LmMIOC4i-C4seC4nuC4nuC4peC4suC4oiDguIjguLPguIHguLHguJQ!5e1!3m2!1sth!2sth!4v1779534518402!5m2!1sth!2sth" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FINAL CTA ===== -->
-<section class="final">
-  <div class="wrap final-inner reveal">
-    <h2>พร้อมเริ่มโครงการแล้วหรือยัง?</h2>
-    <p>ทีมวิศวกรของเราพร้อมให้คำปรึกษาฟรี ตั้งแต่ขั้นตอนแรกจนถึงส่งมอบ</p>
-    <a href="tel:0952914565" class="phone">095-291-4565</a>
-    <div class="final-cta">
-      <a href="#quote" class="btn btn-primary btn-lg">ขอใบเสนอราคา</a>
-      <a href="https://line.me/ti/p/eDE1lPEqK3" target="_blank" rel="noopener" class="btn btn-line btn-lg">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.64 2 10.1c0 4 3.55 7.34 8.35 7.97.32.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.01.89.55s5.86-3.45 8-5.91C21.36 13.35 22 11.79 22 10.1 22 5.64 17.52 2 12 2z"/></svg>
-        แชท LINE
-      </a>
     </div>
   </div>
 </section>
@@ -994,62 +795,38 @@ footer{background:#0A0A0B;color:rgba(255,255,255,.7);padding:60px 0 30px}
         <p>บริษัท เอ็ม.ดี. เอ็นจิเนียริ่ง แอนด์ ซัพพลาย จำกัด ผู้เชี่ยวชาญด้านพื้นโรงงาน กันซึม และระบบวิศวกรรมครบวงจร</p>
       </div>
       <div class="foot-col">
-        <h4>บริการ</h4>
-        <a href="#services">Waterproofing</a>
-        <a href="#services">Epoxy / PU Flooring</a>
-        <a href="#services">Cleanroom & Iso Wall</a>
-        <a href="#services">Solar Rooftop</a>
-        <a href="#services">CCTV & Security</a>
-      </div>
-      <div class="foot-col">
-        <h4>เมนู</h4>
-        <a href="#home">หน้าแรก</a>
-        <a href="#works">ผลงาน</a>
-        <a href="#process">ขั้นตอน</a>
-        <a href="#quote">ขอใบเสนอราคา</a>
-        <a href="#contact">ติดต่อ</a>
-      </div>
-      <div class="foot-col">
         <h4>ติดต่อ</h4>
-        <a href="tel:0952914565">095-291-4565</a>
-        <a href="mailto:mdengineeringandsupply@gmail.com">อีเมล</a>
-        <a href="https://line.me/ti/p/eDE1lPEqK3" target="_blank" rel="noopener">LINE Official</a>
-        <a href="https://www.facebook.com/mdengineerandsupply" target="_blank" rel="noopener">Facebook</a>
+        <a href="tel:0952914565" data-track="call">📞 095-291-4565</a>
+        <a href="https://line.me/ti/p/eDE1lPEqK3" target="_blank" rel="noopener" data-track="line">💬 LINE Official</a>
+        <a href="mailto:mdengineeringandsupply@gmail.com" data-track="email">✉️ อีเมล</a>
+        <a href="https://www.facebook.com/mdengineerandsupply" target="_blank" rel="noopener" data-track="fb">Ⓕ Facebook</a>
+      </div>
+      <div class="foot-col">
+        <h4>ที่อยู่</h4>
+        <p>133/456 ซอยสำนักงานที่ดินบางบัวทอง ต.พิมลราช อ.บางบัวทอง จ.นนทบุรี 11110</p>
       </div>
     </div>
     <div class="foot-bot">
       <span>© 2025 MD Engineering & Supply Co., Ltd.</span>
-      <span>Precision. Elevated. — Designed with care.</span>
+      <span>Precision. Elevated.</span>
     </div>
   </div>
 </footer>
 
-<!-- ===== FLOATING ===== -->
+<!-- Floating -->
 <div class="float">
-  <a href="tel:0952914565" class="fbtn call" data-tip="โทรเลย" aria-label="โทร">
+  <a href="tel:0952914565" class="fbtn call" aria-label="โทร" data-track="call">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
   </a>
-  <a href="https://line.me/ti/p/eDE1lPEqK3" target="_blank" rel="noopener" class="fbtn line" data-tip="แชท LINE" aria-label="LINE">
+  <a href="https://line.me/ti/p/eDE1lPEqK3" target="_blank" rel="noopener" class="fbtn line" aria-label="LINE" data-track="line">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.64 2 10.1c0 4 3.55 7.34 8.35 7.97.32.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.01.89.55s5.86-3.45 8-5.91C21.36 13.35 22 11.79 22 10.1 22 5.64 17.52 2 12 2z"/></svg>
   </a>
-  <a href="https://www.facebook.com/mdengineerandsupply" target="_blank" rel="noopener" class="fbtn fb" data-tip="Facebook" aria-label="Facebook">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12a12 12 0 1 0-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.96.93-1.96 1.87V12h3.33l-.53 3.47h-2.8v8.38A12 12 0 0 0 24 12z"/></svg>
-  </a>
-  <button class="fbtn up" id="toTop" data-tip="กลับขึ้นบน" aria-label="กลับขึ้นบน">
+  <button class="fbtn up" id="toTop" aria-label="กลับขึ้นบน">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m18 15-6-6-6 6"/></svg>
   </button>
 </div>
 
-<!-- ===== LIGHTBOX ===== -->
-<div class="lb" id="lb">
-  <button class="lb-x" id="lbX">×</button>
-  <button class="lb-arr prev" id="lbPrev">‹</button>
-  <img id="lbImg" src="" alt="">
-  <button class="lb-arr next" id="lbNext">›</button>
-  <div class="lb-cap" id="lbCap"></div>
-</div>
-
-<!-- ===== QUOTE SUCCESS MODAL ===== -->
+<!-- Quote Success Modal -->
 <div class="modal" id="quoteModal">
   <div class="modal-card">
     <div class="modal-head">
@@ -1057,8 +834,9 @@ footer{background:#0A0A0B;color:rgba(255,255,255,.7);padding:60px 0 30px}
       <div class="ic-success">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg>
       </div>
-      <h3>ขอใบเสนอราคาเรียบร้อย ✓</h3>
-      <p>เลือกช่องทางส่งข้อมูลให้ทีมงานด้านล่าง</p>
+      <h3>ส่งคำขอเรียบร้อย</h3>
+      <div class="qtw" id="qtwBadge">QTW-XXXXX</div>
+      <p id="modalSubtitle">ทีมงานจะติดต่อกลับภายใน 24 ชม.</p>
     </div>
     <div class="modal-body">
       <div class="q-summary" id="qSummary"></div>
@@ -1066,20 +844,57 @@ footer{background:#0A0A0B;color:rgba(255,255,255,.7);padding:60px 0 30px}
     <div class="modal-actions">
       <a href="#" class="btn btn-line" id="sendLine">
         <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2C6.48 2 2 5.64 2 10.1c0 4 3.55 7.34 8.35 7.97.32.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.01.89.55s5.86-3.45 8-5.91C21.36 13.35 22 11.79 22 10.1 22 5.64 17.52 2 12 2z"/></svg>
-        ส่งทาง LINE
+        ส่งซ้ำทาง LINE
       </a>
-      <a href="#" class="btn btn-secondary" id="sendEmail">
+      <a href="#" class="btn btn-dark" id="sendEmail">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
-        ส่งทางอีเมล
+        ส่งซ้ำทางอีเมล
       </a>
       <button class="btn btn-ghost full" id="copyBtn">📋 คัดลอกข้อมูล</button>
-      <a href="tel:0952914565" class="btn btn-primary full">📞 หรือโทรเลย 095-291-4565</a>
+      <a href="tel:0952914565" class="btn btn-outline full" data-track="call">📞 หรือโทรเลย 095-291-4565</a>
     </div>
   </div>
 </div>
 
 <script>
-/* ===== NAV ===== */
+/* ====== Analytics: track page view + event clicks ====== */
+const ANALYTICS = {
+  pageview(){this.send('pageview',{path:location.pathname})},
+  event(name,data){this.send('event',{name,...data})},
+  send(type,payload){
+    try{
+      const k='md_local_log';
+      const log=JSON.parse(localStorage.getItem(k)||'[]');
+      log.push({type,payload,ts:Date.now()});
+      localStorage.setItem(k,JSON.stringify(log.slice(-200)));
+    }catch(_){}
+    /* If Apps Script URL configured, send beacon */
+    if(window.MD_CONFIG&&window.MD_CONFIG.APPS_SCRIPT_URL){
+      try{
+        const blob=new Blob([JSON.stringify({action:'track',type,payload,ts:Date.now()})],{type:'text/plain'});
+        navigator.sendBeacon(window.MD_CONFIG.APPS_SCRIPT_URL,blob);
+      }catch(_){}
+    }
+    /* GA4 if configured */
+    if(window.gtag)try{window.gtag('event',type==='pageview'?'page_view':payload.name||'click',payload)}catch(_){}
+  }
+};
+ANALYTICS.pageview();
+document.querySelectorAll('[data-track]').forEach(el=>{
+  el.addEventListener('click',()=>ANALYTICS.event(el.dataset.track,{href:el.href||''}));
+});
+
+/* Load GA4 if configured */
+(function(){
+  const id=window.MD_CONFIG&&window.MD_CONFIG.GA_MEASUREMENT_ID;
+  if(!id)return;
+  const s=document.createElement('script');s.async=true;
+  s.src='https://www.googletagmanager.com/gtag/js?id='+id;document.head.appendChild(s);
+  window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};
+  gtag('js',new Date());gtag('config',id);
+})();
+
+/* Nav scroll */
 const nav=document.getElementById('nav'),toTop=document.getElementById('toTop');
 window.addEventListener('scroll',()=>{
   const y=window.scrollY;
@@ -1088,79 +903,56 @@ window.addEventListener('scroll',()=>{
 },{passive:true});
 toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
-/* ===== Mobile Menu ===== */
-const ham=document.getElementById('hamburger'),menu=document.getElementById('menu');
-ham.addEventListener('click',()=>{ham.classList.toggle('open');menu.classList.toggle('open')});
-menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ham.classList.remove('open');menu.classList.remove('open')}));
-
-/* ===== Reveal on scroll ===== */
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -60px 0px'});
+/* Reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -50px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-/* ===== Counter ===== */
-const cio=new IntersectionObserver(es=>es.forEach(e=>{
-  if(!e.isIntersecting)return;
-  const el=e.target,target=+el.dataset.count,suffix=el.dataset.suffix||'';
-  let cur=0;const inc=target/50;
-  const t=setInterval(()=>{cur+=inc;if(cur>=target){cur=target;clearInterval(t)}el.textContent=Math.floor(cur)+suffix},20);
-  cio.unobserve(el);
-}),{threshold:.5});
-document.querySelectorAll('[data-count]').forEach(c=>cio.observe(c));
+/* iPhone screen rotation 4s */
+const phoneSlides=document.querySelectorAll('.slide');
+const phoneDots=document.getElementById('phoneDots');
+let phoneIdx=0,phoneTimer;
+phoneSlides.forEach((_,i)=>{
+  const s=document.createElement('span');
+  if(i===0)s.classList.add('active');
+  s.addEventListener('click',e=>{e.stopPropagation();e.preventDefault();goPhone(i)});
+  phoneDots.appendChild(s);
+});
+function goPhone(i){
+  phoneSlides[phoneIdx].classList.remove('active');
+  phoneDots.children[phoneIdx].classList.remove('active');
+  phoneIdx=(i+phoneSlides.length)%phoneSlides.length;
+  phoneSlides[phoneIdx].classList.add('active');
+  phoneDots.children[phoneIdx].classList.add('active');
+}
+function resetPhone(){clearInterval(phoneTimer);phoneTimer=setInterval(()=>goPhone(phoneIdx+1),4000)}
+resetPhone();
 
-/* ===== Hero Showcase Carousel ===== */
-const slides=document.querySelectorAll('.showcase-slide');
-const dotsBox=document.getElementById('showcaseDots');
-let curS=0,autoTimer;
-slides.forEach((_,i)=>{
+/* Works slideshow 5s */
+const workSlides=document.querySelectorAll('.works-slide');
+const workDots=document.getElementById('worksDots');
+let workIdx=0,workTimer;
+workSlides.forEach((_,i)=>{
   const b=document.createElement('button');
   if(i===0)b.classList.add('active');
-  b.addEventListener('click',()=>goS(i));
-  dotsBox.appendChild(b);
+  b.addEventListener('click',()=>goWork(i));
+  workDots.appendChild(b);
 });
-function goS(i){
-  slides[curS].classList.remove('active');
-  dotsBox.children[curS].classList.remove('active');
-  curS=(i+slides.length)%slides.length;
-  slides[curS].classList.add('active');
-  dotsBox.children[curS].classList.add('active');
-  resetAuto();
+function goWork(i){
+  workSlides[workIdx].classList.remove('active');
+  workDots.children[workIdx].classList.remove('active');
+  workIdx=(i+workSlides.length)%workSlides.length;
+  workSlides[workIdx].classList.add('active');
+  workDots.children[workIdx].classList.add('active');
 }
-function resetAuto(){clearInterval(autoTimer);autoTimer=setInterval(()=>goS(curS+1),5500)}
-document.querySelector('.showcase-arrow.prev').addEventListener('click',()=>goS(curS-1));
-document.querySelector('.showcase-arrow.next').addEventListener('click',()=>goS(curS+1));
-resetAuto();
-/* pause on hover */
-document.getElementById('showcase').addEventListener('mouseenter',()=>clearInterval(autoTimer));
-document.getElementById('showcase').addEventListener('mouseleave',resetAuto);
+function resetWork(){clearInterval(workTimer);workTimer=setInterval(()=>goWork(workIdx+1),5000)}
+resetWork();
 
-/* ===== Lightbox ===== */
-const lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap');
-const gItems=[...document.querySelectorAll('.gitem')];
-let lbi=0;
-function openLB(i){lbi=i;const it=gItems[i];lbImg.src=it.querySelector('img').src;lbCap.textContent=it.dataset.cap||'';lb.classList.add('open');document.body.style.overflow='hidden'}
-function closeLB(){lb.classList.remove('open');document.body.style.overflow=''}
-function navLB(d){lbi=(lbi+d+gItems.length)%gItems.length;openLB(lbi)}
-gItems.forEach((it,i)=>it.addEventListener('click',()=>openLB(i)));
-document.getElementById('lbX').addEventListener('click',closeLB);
-document.getElementById('lbPrev').addEventListener('click',()=>navLB(-1));
-document.getElementById('lbNext').addEventListener('click',()=>navLB(1));
-lb.addEventListener('click',e=>{if(e.target===lb)closeLB()});
-document.addEventListener('keydown',e=>{
-  if(lb.classList.contains('open')){
-    if(e.key==='Escape')closeLB();
-    if(e.key==='ArrowRight')navLB(1);
-    if(e.key==='ArrowLeft')navLB(-1);
-  }
-});
-
-/* ===== Service Chip toggle ===== */
+/* Chip toggle */
 document.querySelectorAll('.chip').forEach(c=>{
-  c.addEventListener('click',e=>{
-    setTimeout(()=>c.classList.toggle('checked',c.querySelector('input').checked),0);
-  });
+  c.addEventListener('click',()=>setTimeout(()=>c.classList.toggle('checked',c.querySelector('input').checked),0));
 });
 
-/* ===== Quote Form ===== */
+/* ====== QUOTE FORM ====== */
 const form=document.getElementById('quoteForm');
 const STORAGE_KEY='md_quote_draft';
 
@@ -1168,7 +960,7 @@ const STORAGE_KEY='md_quote_draft';
 try{
   const draft=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');
   if(draft){
-    ['name','phone','email','company','address','message'].forEach(k=>{
+    ['name','taxId','contact','email','details'].forEach(k=>{
       const f=form.querySelector(`[name="${k}"]`);if(f&&draft[k])f.value=draft[k];
     });
     if(Array.isArray(draft.services)){
@@ -1179,23 +971,19 @@ try{
   }
 }catch(_){}
 
-/* Save draft on change */
 form.addEventListener('input',()=>{
-  const d=collectData();
-  try{localStorage.setItem(STORAGE_KEY,JSON.stringify(d))}catch(_){}
+  try{localStorage.setItem(STORAGE_KEY,JSON.stringify(collect()))}catch(_){}
 });
 
-function collectData(){
+function collect(){
   const fd=new FormData(form);
-  const services=[...form.querySelectorAll('.chip input:checked')].map(i=>i.value);
   return {
     name:(fd.get('name')||'').trim(),
-    phone:(fd.get('phone')||'').trim(),
+    taxId:(fd.get('taxId')||'').trim(),
+    contact:(fd.get('contact')||'').trim(),
     email:(fd.get('email')||'').trim(),
-    company:(fd.get('company')||'').trim(),
-    address:(fd.get('address')||'').trim(),
-    message:(fd.get('message')||'').trim(),
-    services
+    details:(fd.get('details')||'').trim(),
+    services:[...form.querySelectorAll('.chip input:checked')].map(i=>i.value)
   };
 }
 
@@ -1203,60 +991,92 @@ function clearErr(){
   form.querySelectorAll('.qf-err').forEach(e=>e.classList.remove('show'));
   form.querySelectorAll('input.error').forEach(e=>e.classList.remove('error'));
 }
-function showErr(key,msg){
-  const e=form.querySelector(`[data-err="${key}"]`);if(e){e.classList.add('show');if(msg)e.textContent=msg}
+function showErr(key){
+  const e=form.querySelector(`[data-err="${key}"]`);if(e)e.classList.add('show');
   const inp=form.querySelector(`[name="${key}"]`);if(inp)inp.classList.add('error');
 }
 
 function validate(d){
   clearErr();
   let ok=true,first=null;
-  if(!d.name){showErr('name');ok=false;first=first||'name'}
-  if(!d.phone||!/^[0-9\-+\s()]{8,}$/.test(d.phone)){showErr('phone',d.phone?'รูปแบบเบอร์ไม่ถูกต้อง':'กรุณากรอกเบอร์โทร');ok=false;first=first||'phone'}
-  if(!d.address){showErr('address');ok=false;first=first||'address'}
-  if(d.services.length===0){
-    const e=document.querySelector('[data-err="services"]');e.classList.add('show');
-    ok=false;first=first||'services';
-  }
-  if(!ok&&first){
-    const el=form.querySelector(`[name="${first}"]`)||document.getElementById('svcChips');
-    if(el)el.scrollIntoView({behavior:'smooth',block:'center'});
-  }
+  if(!d.contact){showErr('contact');ok=false;first=first||'contact'}
+  if(!d.email||!/^\S+@\S+\.\S+$/.test(d.email)){showErr('email');ok=false;first=first||'email'}
+  if(!ok&&first){const el=form.querySelector(`[name="${first}"]`);if(el)el.scrollIntoView({behavior:'smooth',block:'center'})}
   return ok;
 }
 
-function buildSummary(d){
+function genQTW(){
+  /* QTW-YYMMDD-XXXX (random fallback if no backend) */
+  const d=new Date();
+  const yy=String(d.getFullYear()).slice(-2);
+  const mm=String(d.getMonth()+1).padStart(2,'0');
+  const dd=String(d.getDate()).padStart(2,'0');
+  const seq=Math.floor(Math.random()*9000+1000);
+  return `QTW-${yy}${mm}${dd}-${seq}`;
+}
+
+function buildSummary(d,qtw){
   const lines=[];
-  lines.push('=== ขอใบเสนอราคา MD Engineering ===');
+  lines.push(`=== ขอใบเสนอราคา [${qtw}] ===`);
   lines.push('วันที่: '+new Date().toLocaleString('th-TH'));
   lines.push('');
-  lines.push('ชื่อ: '+d.name);
-  lines.push('เบอร์: '+d.phone);
-  if(d.email)lines.push('อีเมล: '+d.email);
-  if(d.company)lines.push('บริษัท/โครงการ: '+d.company);
-  lines.push('ที่อยู่หน้างาน: '+d.address);
-  lines.push('');
-  lines.push('บริการที่สนใจ:');
-  d.services.forEach(s=>lines.push('  • '+s));
-  if(d.message){lines.push('');lines.push('รายละเอียดเพิ่มเติม:');lines.push(d.message)}
+  if(d.name)lines.push('ชื่อ/บริษัท: '+d.name);
+  if(d.taxId)lines.push('เลขภาษี: '+d.taxId);
+  lines.push('LINE/เบอร์: '+d.contact);
+  lines.push('อีเมล: '+d.email);
+  if(d.services.length){
+    lines.push('');
+    lines.push('บริการที่สนใจ:');
+    d.services.forEach(s=>lines.push('  • '+s));
+  }
+  if(d.details){
+    lines.push('');
+    lines.push('รายละเอียดงาน:');
+    lines.push(d.details);
+  }
   return lines.join('\n');
 }
 
 const modal=document.getElementById('quoteModal');
 const qSummary=document.getElementById('qSummary');
+const qtwBadge=document.getElementById('qtwBadge');
+const modalSubtitle=document.getElementById('modalSubtitle');
 
-form.addEventListener('submit',e=>{
+form.addEventListener('submit',async e=>{
   e.preventDefault();
-  const d=collectData();
+  const d=collect();
   if(!validate(d))return;
-  const summary=buildSummary(d);
-  qSummary.textContent=summary;
 
-  /* Build send links */
-  const emailSubject='ขอใบเสนอราคา - '+d.name;
-  document.getElementById('sendEmail').href=
-    'mailto:mdengineeringandsupply@gmail.com?subject='+encodeURIComponent(emailSubject)+'&body='+encodeURIComponent(summary);
-  /* LINE - LINE Official OA chat opens via the company link */
+  const qtw=genQTW();
+  const summary=buildSummary(d,qtw);
+  qSummary.textContent=summary;
+  qtwBadge.textContent=qtw;
+
+  /* Send to backend (Apps Script) if configured */
+  let backendOK=false;
+  const url=window.MD_CONFIG&&window.MD_CONFIG.APPS_SCRIPT_URL;
+  if(url){
+    modalSubtitle.textContent='กำลังส่งข้อมูลไปที่ทีมงาน...';
+    try{
+      const res=await fetch(url,{
+        method:'POST',
+        mode:'no-cors',
+        headers:{'Content-Type':'text/plain'},
+        body:JSON.stringify({action:'quote',qtw,data:d,ts:Date.now()})
+      });
+      backendOK=true;
+      modalSubtitle.textContent='ส่งให้ทีมงานเรียบร้อย · ติดต่อกลับใน 24 ชม.';
+    }catch(err){
+      modalSubtitle.textContent='ระบบส่งอัตโนมัติติดขัด — กรุณากดส่งซ้ำทาง LINE/อีเมล';
+    }
+  }else{
+    modalSubtitle.textContent='ส่งซ้ำทาง LINE / อีเมล เพื่อยืนยันกับทีมงาน';
+  }
+  ANALYTICS.event('quote_submit',{qtw,backendOK});
+
+  /* Build send-again links */
+  const emailSubject=`[${qtw}] ขอใบเสนอราคา`;
+  document.getElementById('sendEmail').href='mailto:mdengineeringandsupply@gmail.com?subject='+encodeURIComponent(emailSubject)+'&body='+encodeURIComponent(summary);
   document.getElementById('sendLine').href='https://line.me/ti/p/eDE1lPEqK3';
 
   modal.classList.add('open');
@@ -1272,17 +1092,15 @@ document.getElementById('copyBtn').addEventListener('click',async ()=>{
   try{
     await navigator.clipboard.writeText(qSummary.textContent);
     btn.textContent='✓ คัดลอกแล้ว';
-    setTimeout(()=>btn.textContent='📋 คัดลอกข้อมูล',2200);
+    setTimeout(()=>btn.textContent='📋 คัดลอกข้อมูล',2000);
   }catch(_){
-    /* fallback */
     const r=document.createRange();r.selectNode(qSummary);
     window.getSelection().removeAllRanges();window.getSelection().addRange(r);
     document.execCommand('copy');window.getSelection().removeAllRanges();
-    btn.textContent='✓ คัดลอกแล้ว';setTimeout(()=>btn.textContent='📋 คัดลอกข้อมูล',2200);
+    btn.textContent='✓ คัดลอกแล้ว';setTimeout(()=>btn.textContent='📋 คัดลอกข้อมูล',2000);
   }
 });
 
-/* clear button */
 document.getElementById('qfClear').addEventListener('click',()=>{
   if(!confirm('ล้างข้อมูลทั้งหมด?'))return;
   form.reset();
