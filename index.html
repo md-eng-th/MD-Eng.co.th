@@ -25,7 +25,7 @@
   window.MD_CONFIG = {
     // ใส่ URL Apps Script ที่ deploy เป็น Web App ตรงนี้ (อ่าน SETUP.md)
     // ถ้ายังไม่ตั้งค่า ฟอร์มจะใช้ mailto/LINE แทนได้
-    APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbybMrK_C7ImIpR704-F5RGVoVvMu0u0ZdJSwT21g2BhG7dgm6vfnWmtElFF_ko9TOtXng/exec',     // เช่น 'https://script.google.com/macros/s/AKfy.../exec'
+    APPS_SCRIPT_URL: '',     // เช่น 'https://script.google.com/macros/s/AKfy.../exec'
     GA_MEASUREMENT_ID: '',   // เช่น 'G-XXXXXXXXXX' (ไม่ใส่ก็ได้)
   };
 </script>
@@ -37,7 +37,7 @@
   "name":"MD Engineering & Supply Co., Ltd.",
   "alternateName":"บริษัท เอ็ม.ดี. เอ็นจิเนียริ่ง แอนด์ ซัพพลาย จำกัด",
   "telephone":"+66952914565",
-  "email":"sales@mdengineeringandsupply.com",
+  "email":"mdengineeringandsupply@gmail.com",
   "url":"https://md-eng-th.github.io/MD-Eng.co.th/",
   "logo":"https://md-eng-th.github.io/MD-Eng.co.th/images/logo.png",
   "address":{"@type":"PostalAddress","streetAddress":"133/456 ซอยสำนักงานที่ดินบางบัวทอง ต.พิมลราช","addressLocality":"บางบัวทอง","addressRegion":"นนทบุรี","postalCode":"11110","addressCountry":"TH"},
@@ -116,12 +116,23 @@ h3{font-size:1.15rem;font-weight:700}
 .btn svg{width:18px;height:18px;flex-shrink:0}
 .btn-lg{padding:15px 30px;font-size:1rem}
 
-/* ===== Blueprint background pattern (architectural lines) ===== */
+/* ===== Blueprint header background (real architectural drawing) ===== */
 .blueprint-bg{
-  position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0;
+  position:absolute;top:0;left:0;right:0;height:100%;
+  pointer-events:none;overflow:hidden;z-index:0;
+  background-image:url('images/blueprint.jpg');
+  background-size:cover;
+  background-position:center 30%;
+  background-repeat:no-repeat;
   opacity:.5;
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 55%,transparent 100%);
+  mask-image:linear-gradient(180deg,#000 0%,#000 55%,transparent 100%);
 }
-.blueprint-bg svg{position:absolute;width:100%;height:100%}
+/* subtle white veil so text stays readable */
+.blueprint-veil{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,.35) 0%,rgba(255,255,255,.55) 60%,rgba(245,245,247,.9) 100%);
+}
 
 /* ===== NAV ===== */
 .nav{
@@ -143,21 +154,38 @@ h3{font-size:1.15rem;font-weight:700}
 .brand-text b{font-family:var(--font-en);font-weight:700;font-size:1.05rem;color:var(--ink);letter-spacing:-.01em}
 .brand-text small{color:var(--ink-3);font-size:.7rem;letter-spacing:.04em}
 
-.nav-actions{display:flex;align-items:center;gap:8px}
-.nav-icon{
-  width:42px;height:42px;border-radius:50%;
-  display:grid;place-items:center;
-  background:var(--bg-2);transition:all .25s var(--ease);
+/* iPad-style text menu with separators */
+.menu{display:flex;align-items:center;gap:0}
+.menu a:not(.btn){
+  position:relative;
+  padding:8px 22px;
+  font-family:var(--font-en);font-weight:600;font-size:.86rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);
+  transition:color .25s var(--ease);
 }
-.nav-icon:hover{transform:translateY(-1px);background:var(--ink);color:#fff}
-.nav-icon.call:hover{background:var(--ink)}
-.nav-icon.line:hover{background:#06C755;color:#fff}
-.nav-icon svg{width:18px;height:18px}
-.nav-quote{margin-left:6px}
+.menu a:not(.btn)::after{
+  content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);
+  width:1px;height:14px;background:var(--line);
+}
+.menu a:not(.btn):last-of-type::after{display:none}
+.menu a:not(.btn):hover{color:var(--ink)}
+.hamburger{display:none;width:42px;height:42px;border-radius:11px;padding:11px;flex-direction:column;justify-content:space-between;background:var(--bg-2)}
+.hamburger span{display:block;height:1.8px;background:var(--ink);border-radius:2px;transition:.3s var(--ease)}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-@media(max-width:640px){
+@media(max-width:860px){
   .brand-text small{display:none}
-  .nav-quote{display:none}
+  .hamburger{display:flex}
+  .menu{
+    position:fixed;top:0;right:-100%;width:78%;max-width:300px;height:100vh;
+    flex-direction:column;align-items:stretch;background:#fff;padding:88px 20px 30px;gap:2px;
+    transition:right .4s var(--ease);box-shadow:-10px 0 40px rgba(0,0,0,.1);
+  }
+  .menu.open{right:0}
+  .menu a:not(.btn){padding:15px 14px;width:100%;border-bottom:1px solid var(--line-soft)}
+  .menu a:not(.btn)::after{display:none}
 }
 
 /* ===== HERO ===== */
@@ -175,6 +203,14 @@ h3{font-size:1.15rem;font-weight:700}
 .hero-text h1{margin-bottom:22px;animation:fadeUp .9s var(--ease) .1s backwards}
 .hero-text h1 .precision{display:block;color:var(--ink);font-family:var(--font-en);font-weight:800;letter-spacing:-.04em;line-height:.95;font-size:clamp(2.8rem,6.5vw,5rem)}
 .hero-text h1 .elevated{display:block;color:var(--ink-3);font-family:var(--font-en);font-weight:300;font-size:clamp(2.2rem,5.5vw,4.4rem);letter-spacing:-.03em;margin-top:-4px;font-style:italic}
+.hero-text .slogan-th{
+  display:block;margin-top:14px;
+  font-family:var(--font-th);font-size:clamp(1.4rem,3vw,2.1rem);
+  letter-spacing:-.01em;line-height:1.2;
+  animation:fadeUp .9s var(--ease) .18s backwards;
+}
+.hero-text .slogan-th .w1{color:var(--ink);font-weight:700}
+.hero-text .slogan-th .w2{color:var(--ink-3);font-weight:400}
 .hero-text .lead{font-size:clamp(1rem,1.5vw,1.15rem);color:var(--ink-2);margin-bottom:14px;animation:fadeUp .9s var(--ease) .25s backwards}
 .hero-text .lead b{color:var(--ink);font-weight:600}
 .hero-text .free{color:var(--ink-3);font-size:.95rem;margin-bottom:32px;animation:fadeUp .9s var(--ease) .35s backwards}
@@ -283,10 +319,24 @@ h3{font-size:1.15rem;font-weight:700}
 /* ===== SECTIONS ===== */
 .sec{padding:90px 0;position:relative}
 .sec-soft{background:var(--bg-2)}
-.sec-head{text-align:center;max-width:680px;margin:0 auto 50px}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 50px;position:relative;z-index:2}
 .sec-head .tag{margin-bottom:14px}
 .sec-head h2{margin-bottom:10px}
 .sec-head p{color:var(--ink-3);font-size:1rem}
+
+/* Marble decorated section (50% subtle) */
+.sec-marble{position:relative;background:var(--bg-2)}
+.sec-marble::before{
+  content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:url('images/marble.jpg');
+  background-size:560px auto;
+  opacity:.5;
+}
+.sec-marble::after{
+  content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(245,245,247,.55));
+}
+.sec-marble .wrap{position:relative;z-index:2}
 
 /* ===== SERVICES ===== */
 .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
@@ -305,6 +355,24 @@ h3{font-size:1.15rem;font-weight:700}
 .svc:hover .ic svg{color:#fff}
 .svc h3{font-size:1.02rem;margin-bottom:6px}
 .svc p{color:var(--ink-3);font-size:.85rem;line-height:1.55}
+
+/* ===== SCOPE (applications checklist) ===== */
+.scope-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;position:relative;z-index:2}
+.scope-item{
+  display:flex;align-items:flex-start;gap:13px;
+  background:rgba(255,255,255,.85);backdrop-filter:blur(4px);
+  border:1px solid var(--line-soft);border-radius:14px;
+  padding:16px 18px;transition:all .3s var(--ease);
+}
+.scope-item:hover{background:#fff;border-color:var(--ink-4);transform:translateX(3px);box-shadow:var(--shadow-sm)}
+.scope-item .ck{
+  width:24px;height:24px;border-radius:50%;flex-shrink:0;margin-top:1px;
+  background:var(--ink);display:grid;place-items:center;
+}
+.scope-item .ck svg{width:13px;height:13px;color:#fff;stroke-width:3.2}
+.scope-item p{font-size:.92rem;color:var(--ink-2);line-height:1.5}
+.scope-item p b{color:var(--ink);font-weight:600}
+@media(max-width:768px){.scope-grid{grid-template-columns:1fr}}
 
 /* ===== WORKS SLIDESHOW (FB-feed style) ===== */
 .works-wrap{max-width:720px;margin:0 auto}
@@ -434,7 +502,8 @@ footer{
 .foot-grid{
   display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:36px;
 }
-.foot-brand img{height:54px;width:auto;margin-bottom:14px;filter:brightness(0) invert(1)}
+.foot-logo-chip{display:inline-block;background:#fff;padding:10px 16px;border-radius:14px;margin-bottom:16px;box-shadow:0 4px 14px rgba(0,0,0,.2)}
+.foot-logo-chip img{height:48px;width:auto;display:block}
 .foot-brand p{color:rgba(255,255,255,.6);font-size:.88rem;line-height:1.6;max-width:340px}
 .foot-col h4{color:#fff;font-size:.92rem;margin-bottom:14px}
 .foot-col a,.foot-col p{display:block;color:rgba(255,255,255,.55);font-size:.87rem;margin-bottom:9px;transition:color .25s var(--ease)}
@@ -444,19 +513,6 @@ footer{
   display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
   color:rgba(255,255,255,.4);font-size:.8rem;
 }
-
-/* ===== FLOATING ===== */
-.float{position:fixed;right:14px;bottom:14px;z-index:99;display:flex;flex-direction:column;gap:10px}
-.fbtn{
-  width:50px;height:50px;border-radius:50%;display:grid;place-items:center;
-  box-shadow:0 6px 18px rgba(0,0,0,.14);transition:all .3s var(--ease);
-}
-.fbtn:hover{transform:scale(1.08);box-shadow:0 12px 28px rgba(0,0,0,.2)}
-.fbtn svg{width:22px;height:22px}
-.fbtn.call{background:var(--ink);color:#fff}
-.fbtn.line{background:#06C755;color:#fff}
-.fbtn.up{background:#fff;color:var(--ink);border:1px solid var(--line);opacity:0;pointer-events:none}
-.fbtn.up.show{opacity:1;pointer-events:auto}
 
 /* ===== Reveal ===== */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
@@ -482,7 +538,6 @@ footer{
   .screen{border-radius:32px}
   .modal-actions{grid-template-columns:1fr}
   .modal-actions .btn.full{grid-column:span 1}
-  .fbtn{width:46px;height:46px}
 }
 @media(max-width:380px){
   .svc-grid{grid-template-columns:1fr}
@@ -499,67 +554,21 @@ footer{
       <img src="images/logo.png" alt="MD Engineering Logo">
       <div class="brand-text"><b>MD Engineering</b><small>& Supply Co., Ltd.</small></div>
     </a>
-    <div class="nav-actions">
-      <a href="tel:0952914565" class="nav-icon call" aria-label="โทร" data-track="call">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      </a>
-      <a href="https://line.me/ti/p/eDE1lPEqK3" target="_blank" rel="noopener" class="nav-icon line" aria-label="LINE" data-track="line">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.64 2 10.1c0 4 3.55 7.34 8.35 7.97.32.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.01.89.55s5.86-3.45 8-5.91C21.36 13.35 22 11.79 22 10.1 22 5.64 17.52 2 12 2z"/></svg>
-      </a>
-      <a href="#quote" class="btn btn-dark nav-quote">ขอใบเสนอราคา</a>
+    <div class="menu" id="menu">
+      <a href="#services">บริการ</a>
+      <a href="#works">ผลงาน</a>
+      <a href="#scope">ขอบเขตงาน</a>
+      <a href="#quote">ติดต่อ</a>
     </div>
+    <button class="hamburger" id="hamburger" aria-label="เมนู"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <!-- ===== HERO ===== -->
 <header class="hero" id="home">
-  <!-- Blueprint background -->
-  <div class="blueprint-bg">
-    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1D1D1F" stroke-width=".5" opacity=".15"/>
-        </pattern>
-        <pattern id="gridBig" width="200" height="200" patternUnits="userSpaceOnUse">
-          <path d="M 200 0 L 0 0 0 200" fill="none" stroke="#1D1D1F" stroke-width="1" opacity=".18"/>
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#grid)"/>
-      <rect width="100%" height="100%" fill="url(#gridBig)"/>
-      <!-- Schematic floor plan lines -->
-      <g stroke="#1D1D1F" stroke-width="1.2" fill="none" opacity=".18">
-        <rect x="80" y="120" width="320" height="220"/>
-        <rect x="120" y="160" width="120" height="80"/>
-        <rect x="260" y="160" width="100" height="80"/>
-        <rect x="120" y="260" width="240" height="60"/>
-        <line x1="80" y1="220" x2="400" y2="220"/>
-        <line x1="240" y1="120" x2="240" y2="220"/>
-        <!-- Dimension lines -->
-        <line x1="80" y1="100" x2="400" y2="100" stroke-dasharray="4 3"/>
-        <line x1="80" y1="90" x2="80" y2="110"/>
-        <line x1="400" y1="90" x2="400" y2="110"/>
-        <!-- Section detail -->
-        <circle cx="600" cy="500" r="80"/>
-        <circle cx="600" cy="500" r="40"/>
-        <line x1="520" y1="500" x2="680" y2="500"/>
-        <line x1="600" y1="420" x2="600" y2="580"/>
-      </g>
-      <g stroke="#1D1D1F" stroke-width=".8" fill="none" opacity=".12">
-        <rect x="800" y="540" width="320" height="200"/>
-        <line x1="800" y1="600" x2="1120" y2="600"/>
-        <line x1="800" y1="660" x2="1120" y2="660"/>
-        <line x1="900" y1="540" x2="900" y2="740"/>
-        <line x1="1020" y1="540" x2="1020" y2="740"/>
-      </g>
-      <!-- Numbers / labels (faint) -->
-      <g fill="#1D1D1F" opacity=".18" font-family="monospace" font-size="11">
-        <text x="230" y="95">3.20</text>
-        <text x="60" y="225">A</text>
-        <text x="240" y="115">B</text>
-        <text x="405" y="225">C</text>
-      </g>
-    </svg>
-  </div>
+  <!-- Blueprint header background (real drawing, 50%) -->
+  <div class="blueprint-bg"></div>
+  <div class="blueprint-veil"></div>
 
   <div class="wrap">
     <div class="hero-grid">
@@ -568,6 +577,7 @@ footer{
         <h1>
           <span class="precision">Precision.</span>
           <span class="elevated">Elevated.</span>
+          <span class="slogan-th"><span class="w1">ประณีตทุกงาน.</span> <span class="w2">เหนือระดับทุกระบบ.</span></span>
         </h1>
         <p class="lead">งานวิศวกรรม <b>พื้นโรงงาน กันซึม</b> และระบบครบวงจร ออกแบบและควบคุมงานโดยทีมวิศวกรผู้เชี่ยวชาญ</p>
         <p class="free"><span>ฟรีสำรวจหน้างาน</span> · <span>ฟรีออกแบบ</span> · เสนอราคาภายใน <span>24 ชั่วโมง</span></p>
@@ -616,10 +626,10 @@ footer{
                 <span class="tap-btn line-c">แตะเพื่อเพิ่มเพื่อน</span>
               </a>
               <!-- Slide 4: Email -->
-              <a class="slide" data-slide="mail" href="mailto:sales@mdengineeringandsupply.com" data-track="email-iphone">
+              <a class="slide" data-slide="mail" href="mailto:mdengineeringandsupply@gmail.com" data-track="email-iphone">
                 <div class="big-ic mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="m22 7-10 5L2 7"/></svg></div>
                 <h4>Email · อีเมล</h4>
-                <div class="val" style="font-size:.95rem">@mdengineering<br>andsupply.com</div>
+                <div class="val" style="font-size:.95rem">mdengineering<br>andsupply@gmail.com</div>
                 <span class="tap-btn mail-c">แตะเพื่อส่งอีเมล</span>
               </a>
             </div>
@@ -632,7 +642,7 @@ footer{
 </header>
 
 <!-- ===== SERVICES ===== -->
-<section class="sec" id="services">
+<section class="sec sec-marble" id="services">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="tag">Services</span>
@@ -693,13 +703,43 @@ footer{
       <p>ตัวอย่างงานที่เราออกแบบและติดตั้ง</p>
     </div>
     <div class="works-wrap reveal">
-      <div class="works-stage" id="works">
+      <div class="works-stage" id="worksStage">
         <div class="works-slide active"><img src="images/waterproofing-rooftop.jpg" alt="กันซึมดาดฟ้า"><div class="label">Waterproofing · กันซึมดาดฟ้า</div></div>
         <div class="works-slide"><img src="images/epoxy-blue.jpg" alt="พื้น Epoxy"><div class="label">Epoxy Flooring · พื้นอีพ็อกซี่</div></div>
         <div class="works-slide"><img src="images/epoxy-corridor.jpg" alt="Cleanroom"><div class="label">Cleanroom · พื้นห้องคลีนรูม</div></div>
         <div class="works-slide"><img src="images/epoxy-red.jpg" alt="Industrial"><div class="label">Industrial · พื้นโรงงาน</div></div>
       </div>
       <div class="works-dots" id="worksDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCOPE (applications) ===== -->
+<section class="sec sec-marble" id="scope">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">Scope of Work</span>
+      <h2>ขอบเขตงานที่เราให้บริการ</h2>
+      <p>ครอบคลุมทุกประเภทงาน ตั้งแต่โรงงานอุตสาหกรรม โรงพยาบาล ไปจนถึงงานพาณิชย์</p>
+    </div>
+    <div class="scope-grid">
+      <div class="scope-item reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>กันซึมดาดฟ้า</b> พื้นอุตสาหกรรม และระบบโครงสร้าง</p></div>
+      <div class="scope-item reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>งานเคลือบพื้น</b> Epoxy, PU, Polishing, Coating</p></div>
+      <div class="scope-item reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>ห้องคลีนรูม</b> ห้องความดันลบ โรงพยาบาล</p></div>
+      <div class="scope-item reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>โชว์รูมรถยนต์</b> ลานจอด โรงจอดรถ คาร์แคร์</p></div>
+      <div class="scope-item reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>พื้นจราจร</b> ช่องจอดคนพิการ ห้างสรรพสินค้า ปั๊มน้ำมัน สถานี EV Charger โรงเรียน</p></div>
+      <div class="scope-item reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>พื้นสนามกีฬา</b> ในร่มและดาดฟ้า</p></div>
+      <div class="scope-item reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>อุตสาหกรรมแพ็คเกจ</b> ครีม-เครื่องสำอาง ยาเวชภัณฑ์ อุตสาหกรรมอาหาร</p></div>
+      <div class="scope-item reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>โรงอาหาร</b> ครัว ร้านอาหาร โรงแรม</p></div>
+      <div class="scope-item reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>ศูนย์กระจายสินค้า</b> คลังสินค้า</p></div>
+      <div class="scope-item reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>พื้นห้องเย็น</b> ผัก-ผลไม้ สินค้าสด</p></div>
+      <div class="scope-item reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>พื้นโรงงานเสื้อผ้า</b></p></div>
+      <div class="scope-item reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>พื้นส่วนผลิต</b> พื้นห้องเครื่องจักร</p></div>
+      <div class="scope-item reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>พื้นโรงงานประกอบรถยนต์</b></p></div>
+      <div class="scope-item reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>พื้นโรงงานอิเล็กทรอนิกส์</b></p></div>
+      <div class="scope-item reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>งานโซล่าเซลล์</b> ในอุตสาหกรรม-โรงงาน</p></div>
+      <div class="scope-item reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>ระบบ Security CCTV</b> กล้องวงจรปิด รักษาความปลอดภัย เครื่องสแกนลายนิ้วมือ บ้าน-สำนักงาน</p></div>
+      <div class="scope-item reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>รับเหมาฝ้าเพดาน ผนังเบา</b> ผนังไอโซวอลล์ห้องเย็น ทาสีภายใน-ภายนอก</p></div>
     </div>
   </div>
 </section>
@@ -791,14 +831,14 @@ footer{
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img src="images/logo.png" alt="MD Logo">
+        <span class="foot-logo-chip"><img src="images/logo.png" alt="MD Logo"></span>
         <p>บริษัท เอ็ม.ดี. เอ็นจิเนียริ่ง แอนด์ ซัพพลาย จำกัด ผู้เชี่ยวชาญด้านพื้นโรงงาน กันซึม และระบบวิศวกรรมครบวงจร</p>
       </div>
       <div class="foot-col">
         <h4>ติดต่อ</h4>
         <a href="tel:0952914565" data-track="call">📞 095-291-4565</a>
         <a href="https://line.me/ti/p/eDE1lPEqK3" target="_blank" rel="noopener" data-track="line">💬 LINE Official</a>
-        <a href="mailto:sales@mdengineeringandsupply.com" data-track="email">✉️ อีเมล</a>
+        <a href="mailto:mdengineeringandsupply@gmail.com" data-track="email">✉️ อีเมล</a>
         <a href="https://www.facebook.com/mdengineerandsupply" target="_blank" rel="noopener" data-track="fb">Ⓕ Facebook</a>
       </div>
       <div class="foot-col">
@@ -812,19 +852,6 @@ footer{
     </div>
   </div>
 </footer>
-
-<!-- Floating -->
-<div class="float">
-  <a href="tel:0952914565" class="fbtn call" aria-label="โทร" data-track="call">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-  </a>
-  <a href="https://line.me/ti/p/eDE1lPEqK3" target="_blank" rel="noopener" class="fbtn line" aria-label="LINE" data-track="line">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.64 2 10.1c0 4 3.55 7.34 8.35 7.97.32.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.01.89.55s5.86-3.45 8-5.91C21.36 13.35 22 11.79 22 10.1 22 5.64 17.52 2 12 2z"/></svg>
-  </a>
-  <button class="fbtn up" id="toTop" aria-label="กลับขึ้นบน">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m18 15-6-6-6 6"/></svg>
-  </button>
-</div>
 
 <!-- Quote Success Modal -->
 <div class="modal" id="quoteModal">
@@ -895,13 +922,15 @@ document.querySelectorAll('[data-track]').forEach(el=>{
 })();
 
 /* Nav scroll */
-const nav=document.getElementById('nav'),toTop=document.getElementById('toTop');
+const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{
-  const y=window.scrollY;
-  nav.classList.toggle('scrolled',y>30);
-  toTop.classList.toggle('show',y>500);
+  nav.classList.toggle('scrolled',window.scrollY>30);
 },{passive:true});
-toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* Mobile hamburger menu */
+const ham=document.getElementById('hamburger'),menu=document.getElementById('menu');
+ham.addEventListener('click',()=>{ham.classList.toggle('open');menu.classList.toggle('open')});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ham.classList.remove('open');menu.classList.remove('open')}));
 
 /* Reveal */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -50px 0px'});
@@ -1076,7 +1105,7 @@ form.addEventListener('submit',async e=>{
 
   /* Build send-again links */
   const emailSubject=`[${qtw}] ขอใบเสนอราคา`;
-  document.getElementById('sendEmail').href='mailto:sales@mdengineeringandsupply.com?subject='+encodeURIComponent(emailSubject)+'&body='+encodeURIComponent(summary);
+  document.getElementById('sendEmail').href='mailto:mdengineeringandsupply@gmail.com?subject='+encodeURIComponent(emailSubject)+'&body='+encodeURIComponent(summary);
   document.getElementById('sendLine').href='https://line.me/ti/p/eDE1lPEqK3';
 
   modal.classList.add('open');
