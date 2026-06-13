@@ -116,22 +116,26 @@ h3{font-size:1.15rem;font-weight:700}
 .btn svg{width:18px;height:18px;flex-shrink:0}
 .btn-lg{padding:15px 30px;font-size:1rem}
 
-/* ===== Blueprint header background (real architectural drawing) ===== */
+/* ===== Blueprint header accent (native size, sharp, positioned) ===== */
 .blueprint-bg{
-  position:absolute;top:0;left:0;right:0;height:100%;
+  position:absolute;top:64px;right:max(2%,calc(50% - 600px));
+  width:420px;height:444px;max-width:42vw;
   pointer-events:none;overflow:hidden;z-index:0;
   background-image:url('images/blueprint.jpg');
-  background-size:cover;
-  background-position:center 30%;
+  background-size:contain;
+  background-position:top right;
   background-repeat:no-repeat;
-  opacity:.5;
-  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 55%,transparent 100%);
-  mask-image:linear-gradient(180deg,#000 0%,#000 55%,transparent 100%);
+  opacity:.22;
+  -webkit-mask-image:radial-gradient(120% 120% at 70% 30%,#000 35%,transparent 80%);
+  mask-image:radial-gradient(120% 120% at 70% 30%,#000 35%,transparent 80%);
 }
 /* subtle white veil so text stays readable */
 .blueprint-veil{
   position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:linear-gradient(180deg,rgba(255,255,255,.35) 0%,rgba(255,255,255,.55) 60%,rgba(245,245,247,.9) 100%);
+  background:linear-gradient(180deg,rgba(255,255,255,.15) 0%,rgba(255,255,255,.35) 60%,rgba(245,245,247,.85) 100%);
+}
+@media(max-width:980px){
+  .blueprint-bg{display:none}
 }
 
 /* ===== NAV ===== */
@@ -329,8 +333,8 @@ h3{font-size:1.15rem;font-weight:700}
 .sec-marble::before{
   content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
   background-image:url('images/marble.jpg');
-  background-size:560px auto;
-  opacity:.5;
+  background-size:300px auto;
+  opacity:.45;
 }
 .sec-marble::after{
   content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
